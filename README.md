@@ -22,7 +22,7 @@ to dist folder
 ## Folder Structure
 
 ```
-BourbonNeatGulpTemplate/
+Gulp-Build-System/
     README.md
     .babelrc
     gulpfile.js
