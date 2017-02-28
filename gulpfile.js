@@ -42,9 +42,8 @@ gulp.task("minifyScripts", ["transpile"], function(){
 
 gulp.task("compileSass", function(){
 	return gulp.src("src/sass/styles.scss")
-	.pipe(sass().on('error', sass.logError))
 	.pipe(maps.init())
-	.pipe(sass())
+	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer())
 	.pipe(maps.write('./'))
 	.pipe(gulp.dest('css'));
