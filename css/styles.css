@@ -1028,7 +1028,9 @@ header.navigation {
         top: 36px; } }
 
 main section.home {
-  @inlude outer-container(99%);
+  max-width: 99%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   /* ================================= 
 	  TABLET
@@ -1036,6 +1038,10 @@ main section.home {
   /* ================================= 
 	  DESKTOP
 	==================================== */ }
+  main section.home::after {
+    clear: both;
+    content: "";
+    display: block; }
   main section.home .wrapper {
     min-height: 100%;
     display: -webkit-box;
@@ -1067,13 +1073,19 @@ main section.home {
         display: block; } }
 
 main section.work {
-  @inlude outer-container(99%);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   /* ================================= 
 	  TABLET
 	==================================== */
   /* ================================= 
 	  DESKTOP
 	==================================== */ }
+  main section.work::after {
+    clear: both;
+    content: "";
+    display: block; }
   main section.work .wrapper {
     min-height: 100%;
     display: -webkit-box;
@@ -1113,7 +1125,9 @@ main section.work {
 
 main section.webapps {
   height: 100vh;
-  @inlude outer-container(99%);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   /* ================================= 
 	  TABLET
@@ -1130,6 +1144,10 @@ main section.webapps {
     display: block;
     -webkit-filter: drop-shadow(0 4px 2px rgba(34, 34, 34, 0.5));
             filter: drop-shadow(0 4px 2px rgba(34, 34, 34, 0.5)); }
+  main section.webapps::after {
+    clear: both;
+    content: "";
+    display: block; }
   main section.webapps .wrapper {
     max-height: 100%;
     display: -webkit-box;
@@ -1260,9 +1278,11 @@ main section.webapps {
         display: block; } }
 
 main section.websites {
-  margin-top: 24em;
+  margin-top: 30em;
   height: 200vh;
-  @inlude outer-container(99%);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   /* ================================= 
 	  TABLET
@@ -1279,6 +1299,10 @@ main section.websites {
     display: block;
     -webkit-filter: drop-shadow(0 4px 2px rgba(34, 34, 34, 0.5));
             filter: drop-shadow(0 4px 2px rgba(34, 34, 34, 0.5)); }
+  main section.websites::after {
+    clear: both;
+    content: "";
+    display: block; }
   main section.websites .wrapper {
     max-height: 100%;
     display: -webkit-box;
@@ -1327,7 +1351,8 @@ main section.websites {
     width: 99vw; }
   @media screen and (min-width: 601px) and (max-width: 999px) {
     main section.websites {
-      height: 100vh; }
+      height: 100vh;
+      margin-top: 3em; }
       main section.websites .wrapper {
         max-width: 80%;
         margin-left: auto;
@@ -1372,8 +1397,6 @@ main section.websites {
     main section.websites {
       height: 100vh;
       margin-top: 3em; }
-      main section.websites img {
-        width: 100%; }
       main section.websites .wrapper {
         max-width: 80%;
         margin-left: auto;
@@ -1423,35 +1446,46 @@ main section.websites {
         display: block; } }
 
 main section.about {
-  @inlude outer-container(99%);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   /* ================================= 
 	  TABLET
 	==================================== */
   /* ================================= 
 	  DESKTOP
 	==================================== */ }
+  main section.about::after {
+    clear: both;
+    content: "";
+    display: block; }
+  main section.about .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   main section.about .triangle-down {
     z-index: -1;
     position: absolute;
     width: 0;
     height: 0;
-    border-left: 49.5vw solid transparent;
-    border-right: 49.5vw solid transparent;
+    border-left: 49vw solid transparent;
+    border-right: 49vw solid transparent;
     border-top: 120vh solid #def1fd; }
   @media screen and (min-width: 601px) and (max-width: 999px) {
     main section.about .wrapper {
       max-width: 80%;
       margin-left: auto;
-      margin-right: auto;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
+      margin-right: auto; }
       main section.about .wrapper::after {
         clear: both;
         content: "";
@@ -1471,7 +1505,10 @@ main section.about {
         padding-top: 6em; } }
 
 main section.contact {
-  @inlude outer-container(99%);
+  margin-top: 9em;
+  max-width: 99%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   /* ================================= 
 	  TABLET
@@ -1479,6 +1516,10 @@ main section.contact {
   /* ================================= 
 	  DESKTOP
 	==================================== */ }
+  main section.contact::after {
+    clear: both;
+    content: "";
+    display: block; }
   main section.contact .wrapper {
     min-height: 100%;
     display: -webkit-box;
@@ -1500,6 +1541,10 @@ main section.contact {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
@@ -1508,8 +1553,9 @@ main section.contact {
       -webkit-box-flex: 1;
           -ms-flex: 1 1 100%;
               flex: 1 1 100%; }
-      main section.contact .wrapper .buttons-container div:nth-child(2) {
-        margin-left: 1.5em; }
+      main section.contact .wrapper .buttons-container li:nth-child(2), main section.contact .wrapper .buttons-container li:nth-child(3) {
+        margin-top: 1.5em;
+        margin-left: 0; }
   @media screen and (min-width: 601px) and (max-width: 999px) {
     main section.contact .wrapper {
       max-width: 80%;
@@ -1518,7 +1564,23 @@ main section.contact {
       main section.contact .wrapper::after {
         clear: both;
         content: "";
-        display: block; } }
+        display: block; }
+      main section.contact .wrapper .buttons-container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 100%;
+                flex: 1 1 100%; }
+        main section.contact .wrapper .buttons-container li:nth-child(2), main section.contact .wrapper .buttons-container li:nth-child(3) {
+          margin-top: 0;
+          margin-left: 1.5em; } }
   @media screen and (min-width: 1000px) {
     main section.contact .wrapper {
       max-width: 80%;
@@ -1527,7 +1589,23 @@ main section.contact {
       main section.contact .wrapper::after {
         clear: both;
         content: "";
-        display: block; } }
+        display: block; }
+      main section.contact .wrapper .buttons-container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 100%;
+                flex: 1 1 100%; }
+        main section.contact .wrapper .buttons-container li:nth-child(2), main section.contact .wrapper .buttons-container li:nth-child(3) {
+          margin-top: 0;
+          margin-left: 1.5em; } }
 
 /* ================================= 
   MOBILE
@@ -1540,8 +1618,12 @@ main {
     clear: both;
     content: "";
     display: block; }
-  main svg.fa:hover {
-    fill: #333333; }
+  main svg.fa {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    fill: #444444; }
+    main svg.fa:hover {
+      fill: #1da1f2; }
 
 button {
   padding: 0.75em; }

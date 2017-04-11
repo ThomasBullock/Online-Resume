@@ -13,8 +13,11 @@ main {
 	
 	
 	svg.fa {
+		transition: all .5s;
+		fill: $tuatara;
+
 		&:hover {
-			fill: $oil;
+			fill: $twitter-blue;
 		}
 	}
 	
@@ -38,8 +41,6 @@ section {
 	}
 	
 }
-
-
 
 
 

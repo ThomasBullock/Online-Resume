@@ -1,7 +1,7 @@
 main {
 	
 	section.websites {
-		margin-top: $base-spacing * 16;
+		margin-top: $base-spacing * 20;
 		height: 200vh;
 		img {
 			@include img-responsive();
@@ -10,7 +10,7 @@ main {
 			filter: drop-shadow(0 4px 2px rgba(34, 34, 34, .5));
 		}
 		
-		@inlude outer-container(99%);
+		@include outer-container(100%);
 			// background: $snow;
 			text-align: center;
 			
@@ -74,7 +74,8 @@ main {
 	==================================== */
 
 		@include media($tablet) {
-			height: 100vh;				
+			height: 100vh;
+			margin-top: $base-spacing * 2;							
 			.wrapper {
 				@include outer-container(80%);
 
@@ -129,11 +130,7 @@ main {
 	==================================== */
 
 		@include media($desktop) {
-			height: 100vh;	
-			
-			img {
-				width: 100%;
-			}
+			height: 100vh;				
 			
 			margin-top: $base-spacing * 2;
 			.wrapper {

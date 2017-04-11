@@ -3,7 +3,7 @@ main {
 	section.work {
 		
 		
-		@inlude outer-container(99%);
+		@include outer-container(100%);
 			// background: $snow;			
 			
 			.wrapper {

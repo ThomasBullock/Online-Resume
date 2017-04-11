@@ -3,7 +3,7 @@ main {
 
 	section.home {
 		
-		@inlude outer-container(99%);
+		@include outer-container(99%);
 		text-align: center;
 		// background: linear-gradient(180deg, $soundcloud-orange, darken($soundcloud-orange, 15%))
 		

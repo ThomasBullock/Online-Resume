@@ -4,12 +4,7 @@ let message = 'Application is running!'
 
 // console.log(message)
 	
-// $(document).ready(function(){
-//   $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
-//     $('.off-canvas-menu,.sliding-panel-fade-screen').toggleClass('is-visible');
-//     e.preventDefault();
-//   });
-// });	
+
 
 const slidingfPanelButton = document.querySelector('.sliding-panel-button');
 
@@ -17,6 +12,9 @@ const slidingPanelClose = document.querySelector('.sliding-panel-close');
 const slidingPanelContent = document.querySelector('.off-canvas-menu');
 
 const navMenuItems = Array.from(document.querySelectorAll('.off-canvas-menu ul li a'));
+
+const emailButton = document.querySelector('.email-btn');
+const phoneButton = document.querySelector('.phone-btn')
 
 console.log(navMenuItems);
 
@@ -33,6 +31,18 @@ navMenuItems.forEach( (item) => {
 })
 
 
+emailButton.addEventListener('click', (e) => {
+	e.preventDefault();
+	window.location.href = "mailto:motbollox@gmail.com";
+})
+
+phoneButton.addEventListener('click', (e) => {
+	e.preventDefault();
+	window.location.href = "tel:0403703950"
+})
+
+
 		
 	
 }(window));
+
