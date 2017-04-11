@@ -24,3 +24,17 @@ $Raleway: 'Raleway', sans-serif;
 @mixin Raleway {
 	@import url('https://fonts.googleapis.com/css?family=Raleway');
 }
+
+
+$VarelaRound: 'Varela Round', sans-serif;
+
+@mixin VarelaRound {
+	@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+}
+
+$Nunito: 'Nunito', sans-serif;
+
+@mixin Nunito {
+	@import url('https://fonts.googleapis.com/css?family=Nunito');
+}
+

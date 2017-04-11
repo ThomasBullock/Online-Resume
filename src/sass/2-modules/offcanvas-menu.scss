@@ -1,0 +1,235 @@
+.off-canvas-menu {
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $sliding-panel-background: $ebony;
+  $sliding-panel-color: #fff;
+  $sliding-panel-background-hover: $action-color;
+  $sliding-panel-color-hover: #fff;
+  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+
+  @include position(fixed, 0 auto 0 0);
+  width: 100vw;
+  background: $sliding-panel-background;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  transform: translateX(-100vw);
+  transition: all 0.25s linear;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+
+  ul.navigation {
+    @include outer-container(50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  ul.navigation {
+    margin-top: 50px;
+
+    li {
+      text-align: center;
+      flex: 1 1 100%;
+      
+      
+    }
+  
+    li:nth-child(2), li:nth-child(3) {
+      margin-left: 0;
+    }
+          
+    
+  }
+
+
+  
+
+
+  li a {
+    // border-bottom: $sliding-panel-border;
+    color: $sliding-panel-color;
+    display: inline-block;
+    font-weight: bold;
+    font-size: $base-font-size * 2;
+    padding: $base-spacing;
+    text-decoration: none;
+
+    &:focus {
+      background-color: $sliding-panel-background-focus;
+    }
+
+    &:hover {
+      background-color: $sliding-panel-background-hover;
+      color: $sliding-panel-color-hover;
+    }
+  }
+
+  &.is-visible {
+    transform: translateX(0);
+  }
+  
+  
+  ul.social-links {
+    @include outer-container(50%);
+    align-self: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;    
+
+    li {
+      text-align: center;
+      flex: 1 1 50%;  
+    }
+
+    li:nth-child(2), li:nth-child(3) {
+      margin-left: $base-spacing / 2;
+    }      
+    
+  }
+  
+  /* ================================= 
+  TABLET
+==================================== */
+
+  @include media($tablet) {     
+
+    ul.navigation {
+      margin-top: 100px;
+      flex-wrap: nowrap;  
+      
+      li {
+        flex: 1 1 33%;
+      }      
+      
+      li:nth-child(2), li:nth-child(3) {
+        margin-left: $base-spacing;
+      }       
+    }
+
+    ul.social-links {  
+      
+      li {
+        text-align: center;
+        flex: 0 1 10%;  
+      }  
+    }      
+    
+  }
+
+
+/* ================================= 
+  DESKTOP
+==================================== */
+
+  @include media($desktop) {    
+
+    ul.navigation {
+      margin-top: 200px;
+      
+      flex-wrap: nowrap;
+
+      li {
+        flex: 1 1 33%;
+      }
+
+      li:nth-child(2), li:nth-child(3) {
+        margin-left: $base-spacing * 2;
+      } 
+      
+    } 
+    
+    ul.social-links {  
+      
+      li {
+        text-align: center;
+        flex: 0 1 10%;  
+      }  
+    }  
+  
+  } 
+
+  
+  
+}
+
+.sliding-panel-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 15px 15px;
+  position: fixed;
+  top: $base-spacing;
+  right: $base-spacing;
+  z-index: 99999;
+  
+    span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      background: #d3531a;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }  
+
+span:nth-child(1) {
+  top: 0px;
+}
+
+span:nth-child(2), span:nth-child(3) {
+  top: 9px;
+}
+
+span:nth-child(4) {
+  top: 18px;
+}
+
+&.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+&.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+&.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+&.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+/* ================================= 
+  DESKTOP
+==================================== */
+
+  @include media($desktop) {    
+    padding: 30px 30px;
+    
+    span {
+      height: 8px;      
+    }
+    
+    span:nth-child(2), span:nth-child(3) {
+      top: 18px;
+    }    
+
+    span:nth-child(4) {
+      top: 36px;
+    }
+    
+  }
+
+}
+

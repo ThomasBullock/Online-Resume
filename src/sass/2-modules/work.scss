@@ -1,0 +1,66 @@
+main {
+	
+	section.work {
+		
+		
+		@inlude outer-container(99%);
+			// background: $snow;			
+			
+			.wrapper {
+				min-height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+ 
+			} 
+
+
+		.triangle-topleft {
+			z-index: -1;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-top: 100vh solid transparent;
+			border-right: 99vw solid lighten($twitter-blue, 40%);
+		}
+		
+
+
+	/* ================================= 
+	  TABLET
+	==================================== */
+
+		@include media($tablet) {				
+			.wrapper {
+				@include outer-container(80%);
+
+				h1{
+					// padding-top: $base-spacing * 2;
+				}
+
+			}
+		} // end of tablet media query
+
+
+
+
+	/* ================================= 
+	  DESKTOP
+	==================================== */
+
+		@include media($desktop) {
+			.wrapper {
+				@include outer-container(80%);
+
+				h1{
+					// padding-top: $base-spacing * 4;
+				}
+															
+			}
+		}  // end of desktop media query
+
+		
+	}
+
+}

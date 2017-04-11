@@ -3,33 +3,29 @@
 ==================================== */
 
 // Media Breakpoints
-$desktop: new-breakpoint(min-width 1025px 12);
-$tablet: new-breakpoint(min-width 768px max-width 1024px 12);
-$phone: new-breakpoint(min-width 320px max-width 767px 12);
+$desktop-lg: new-breakpoint(min-width 1150px 12);
+$desktop: new-breakpoint(min-width 1000px 12);
+$tablet: new-breakpoint(min-width 601px max-width 999px 12);
+$phone: new-breakpoint(min-width 320px max-width 600px 12);
 
 
 
 // Typography
 @import "fonts";
 
-@include Lato;
-@include Montserrat;
+@include VarelaRound;
+@include Nunito;
 
 
-$base-font-family: $Lato;
-$heading-font-family: $Montserrat;
+$base-font-family: $Nunito;
+$heading-font-family: $VarelaRound;
 
-// Font Sizes
-$base-font-size: 1em;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
 
-// Line height
-$base-line-height: 1.5;
-$heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
+$base-border-radius: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
@@ -59,17 +55,19 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
-// Font Colors
-$base-font-color: $dark-gray;
-$action-color: #FFF;
+$action-color: $blue;
+$base-background-color: $base;
+
+$base-font-size: 1rem;
+$base-font-color: $vapor;
+$base-line-height: $base-spacing;
+
+$heading-line-height: $base-spacing;
+
 
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
-
-// Background Colors
-$base-background-color: #fff;
-$secondary-background-color: tint($base-border-color, 75%);
 
 /// social media colors ////
 $facebook-blue     : #3b5998;
@@ -87,7 +85,6 @@ $instagram-blue    : #405de6;
 $instagram-purple  : #833ab4;
 $instagram-orange  : #fcaf45;
 $instagram-yellow  : #ffdc80;
-
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);

@@ -1,0 +1,72 @@
+main {
+	
+	section.about {
+		
+		@inlude outer-container(99%);
+			// background: lighten($twitter-blue, 40%);			
+			
+			.wrapper {
+				// padding-top: $base-spacing * 2;
+			} 
+
+
+		// .triangle-topleft {
+		// 	z-index: -1;
+		// 	position: absolute;
+		// 	width: 0;
+		// 	height: 0;
+		// 	border-top: 100vh solid transparent;
+		// 	border-right: 99vw solid lighten($twitter-blue, 40%);
+		// }
+		
+			.triangle-down {
+				z-index: -1;
+				position: absolute;				
+				width: 0;
+				height: 0;
+				border-left: 49.5vw solid transparent;
+				border-right: 49.5vw solid transparent;
+				border-top: 120vh solid lighten($twitter-blue, 40%);
+			}
+
+
+	/* ================================= 
+	  TABLET
+	==================================== */
+
+		@include media($tablet) {				
+			.wrapper {
+				@include outer-container(80%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				h1{
+					padding-top: $base-spacing * 2;
+				}
+
+			}
+		} // end of tablet media query
+
+
+
+
+	/* ================================= 
+	  DESKTOP
+	==================================== */
+
+		@include media($desktop) {
+			.wrapper {
+				@include outer-container(80%);
+
+				h1{
+					padding-top: $base-spacing * 4;
+				}
+															
+			}
+		}  // end of desktop media query
+
+		
+	}
+
+}

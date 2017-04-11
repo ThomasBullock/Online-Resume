@@ -1,0 +1,62 @@
+main {
+	
+
+	section.contact {
+		
+		@inlude outer-container(99%);
+		text-align: center;
+
+		
+		.wrapper {
+			min-height: 100%;
+			display: flex;
+			flex-wrap: wrap;	
+			justify-content: center;
+			align-items: center;
+			h1 {
+				flex: 1 1 100%;					
+			}
+			
+			.buttons-container {
+				display: flex;
+				justify-content: center;
+				align-self: flex-start;
+				flex: 1 1 100%;
+				
+				div:nth-child(2) {
+					margin-left: $base-spacing; 
+				}
+					
+			}
+			
+
+			
+		}
+		
+
+
+
+	/* ================================= 
+	  TABLET
+	==================================== */
+
+		@include media($tablet) {				
+			.wrapper {
+				@include outer-container(80%);	
+			}
+		}
+
+
+
+	/* ================================= 
+	  DESKTOP
+	==================================== */
+
+		@include media($desktop) {
+			.wrapper {
+				@include outer-container(80%);	
+			}		
+		}
+	}
+	
+}

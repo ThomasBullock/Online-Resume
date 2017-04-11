@@ -1,0 +1,50 @@
+main {
+	
+
+	section.home {
+		
+		@inlude outer-container(99%);
+		text-align: center;
+		// background: linear-gradient(180deg, $soundcloud-orange, darken($soundcloud-orange, 15%))
+		
+		.wrapper {
+			min-height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+			
+			.cover {
+				
+			}
+		}
+		
+		h2{
+			
+		}	
+
+
+	/* ================================= 
+	  TABLET
+	==================================== */
+
+		@include media($tablet) {				
+			.wrapper {
+				@include outer-container(80%);	
+			}
+		}
+
+
+
+	/* ================================= 
+	  DESKTOP
+	==================================== */
+
+		@include media($desktop) {
+			.wrapper {
+				@include outer-container(80%);	
+			}		
+		}
+	}
+	
+}

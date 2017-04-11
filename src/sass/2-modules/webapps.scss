@@ -1,0 +1,188 @@
+main {
+	
+	section.webapps {
+		// border: solid 1px black;
+		height: 100vh;
+		// height: 1000px
+		img {
+			@include img-responsive();
+			// width: 90%;
+			// margin: 0 auto;			
+			filter: drop-shadow(0 4px 2px rgba(34, 34, 34, .5));
+		}
+		
+		@inlude outer-container(99%);
+			// background: $snow;
+			text-align: center;
+			
+			
+			.wrapper {
+				max-height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;				
+					
+				h3 {
+					margin-top: $base-spacing;
+				} 
+
+
+					.container {
+						margin-top: $base-spacing * 2;
+						display: flex;
+						flex-wrap: wrap;
+						
+						.left-col {
+								flex: 1 1 100%;
+								margin-left: 0;
+								margin-right: 0;									
+						}
+						
+						.right-col {
+								flex: 1 1 100%;
+								margin-left: 0;
+								margin-right: 0;													
+						}
+					}					
+
+			} 
+
+
+
+		.triangle-bottomleft {
+			z-index: -1;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-bottom: 100vh solid transparent;
+			border-right: 99vw solid lighten($twitter-blue, 40%);
+		}
+		
+
+
+	/* ================================= 
+	  TABLET
+	==================================== */
+
+		@include media($tablet) {				
+			.wrapper {
+				@include outer-container(80%);
+
+				h1{
+					// padding-top: $base-spacing * 2;
+				}
+				
+				h3 {
+					margin-top: 0;
+				} 				
+
+				.container {
+					margin-top: $base-spacing * 2;
+					display: flex;
+					flex-wrap: nowrap;
+					
+					p {
+						margin-top: $base-spacing / 2;
+					}
+										
+					.left-col {
+							flex: 1 1 50%;
+					}
+					
+					.right-col {
+							flex: 1 1 50%;
+							margin-left: $base-spacing;						
+					}
+				}
+				
+				.container:nth-child(odd) {
+					.left-col {
+							order: 2;
+					}
+					
+					.right-col {
+							order: 1;
+							margin-right: $base-spacing;
+							margin-left: 0;								
+					}					
+				}
+
+
+			}
+		} // end of tablet media query
+
+
+
+
+	/* ================================= 
+	  DESKTOP
+	==================================== */
+
+		@include media($desktop) {
+			img {
+				width: 100%;
+			}
+			.wrapper {
+				@include outer-container(80%);
+
+				h1{
+					// padding-top: $base-spacing;
+				}
+				
+				h3 {
+					margin-top: 0;
+				} 
+				
+			
+				.container {
+					margin-top: $base-spacing * 2;
+					display: flex;
+					flex-wrap: nowrap;
+					
+					p {
+						margin-top: $base-spacing / 2;
+					}
+										
+					.left-col {
+							flex: 1 1 50%;
+					}
+					
+					.right-col {
+							flex: 1 1 50%;
+							margin-left: $base-spacing;						
+					}
+				}
+				
+				.container:nth-child(odd) {
+					.left-col {
+							order: 2;
+					}
+					
+					.right-col {
+							order: 1;
+							margin-right: $base-spacing;
+							margin-left: 0;								
+					}					
+				}
+				
+									
+
+															
+			}
+		}  // end of desktop media query
+
+	/* ================================= 
+	  DESKTOP LARGE
+	==================================== */
+
+		@include media($desktop-lg) {
+			.wrapper {
+				@include outer-container(60%);
+			}
+						
+		}
+
+		
+	}
+
+}

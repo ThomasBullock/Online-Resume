@@ -1,0 +1,75 @@
+body {
+
+
+
+}
+
+/* ================================= 
+  MOBILE
+==================================== */
+
+main {
+	@include outer-container(100%);
+	
+	
+	svg.fa {
+		&:hover {
+			fill: $oil;
+		}
+	}
+	
+}
+
+button {
+	padding: $base-spacing / 2;	
+}
+
+
+
+section {
+	height: 100vh;
+	position: relative;
+	text-align: center;
+
+
+	.wrapper {
+		// position: relative;
+		padding: $base-spacing $base-spacing / 2;
+	}
+	
+}
+
+
+
+
+
+
+/* ================================= 
+  TABLET
+==================================== */
+	
+@include media($tablet) {				
+
+	section {
+		.wrapper {
+			padding: $base-spacing $base-spacing;			
+		}
+	}
+}
+
+/* ================================= 
+  DESKTOP
+==================================== */
+
+@include media($desktop) {
+
+
+	section {
+		.wrapper {
+			padding: $base-spacing * 2 $base-spacing * 2;				
+		}
+	}
+
+}
+
+
