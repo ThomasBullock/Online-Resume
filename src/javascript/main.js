@@ -236,7 +236,7 @@ navMenuItems.forEach( (item) => {
 
 emailButton.addEventListener('click', (e) => {
 	e.preventDefault();
-	window.location.href = "mailto:motbollox@gmail.com";
+	window.location.href = "mailto:talk@tbullock.net";
 })
 
 phoneButton.addEventListener('click', (e) => {
