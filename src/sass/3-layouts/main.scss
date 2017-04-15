@@ -1,7 +1,6 @@
 body {
 
 
-
 }
 
 /* ================================= 
@@ -10,6 +9,21 @@ body {
 
 main {
 	@include outer-container(100%);
+	overflow-x: hidden;
+	
+	a.smooth-link {
+		position: relative;
+		// width: 64px;
+		height: 64px;
+		// padding: 10px;
+	}
+
+	
+	.tech-list {
+		li {
+			display: inline-block;
+		}
+	}
 	
 	
 	svg.fa {

@@ -55,7 +55,7 @@ main {
 			width: 0;
 			height: 0;
 			border-bottom: 100vh solid transparent;
-			border-right: 99vw solid lighten($twitter-blue, 40%);
+			border-right: 100vw solid lighten($twitter-blue, 40%);
 		}
 		
 
@@ -64,8 +64,10 @@ main {
 	  TABLET
 	==================================== */
 
-		@include media($tablet) {				
+		@include media($tablet) {
+		
 			.wrapper {
+				padding-top: $base-spacing * 4;		
 				@include outer-container(80%);
 
 				h1{

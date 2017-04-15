@@ -3,9 +3,40 @@ main {
 
 	section.home {
 		
-		@include outer-container(99%);
+		// @include outer-container(100%);
 		text-align: center;
 		// background: linear-gradient(180deg, $soundcloud-orange, darken($soundcloud-orange, 15%))
+		
+		.scene {
+			background: lighten($twitter-blue, 40%);
+			border: solid 12px $twitter-blue;
+			border-radius: 50%;
+			bottom: 0;
+			height: 300px;
+			left: 0;
+			margin: auto;
+			overflow: hidden;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 300px;
+			z-index: -1;
+			&:after {
+
+				bottom: 0;
+				content: '';
+				left: 0;
+				opacity: 0.15;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+
+		canvas {
+			background: lighten($twitter-blue, 40%);
+			display: block;
+		}
 		
 		.wrapper {
 			min-height: 100%;

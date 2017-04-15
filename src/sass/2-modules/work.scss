@@ -3,7 +3,7 @@ main {
 	section.work {
 		
 		
-		@include outer-container(100%);
+		// @include outer-container(100%);
 			// background: $snow;			
 			
 			.wrapper {
@@ -22,7 +22,7 @@ main {
 			width: 0;
 			height: 0;
 			border-top: 100vh solid transparent;
-			border-right: 99vw solid lighten($twitter-blue, 40%);
+			border-right: 100vw solid lighten($twitter-blue, 40%);
 		}
 		
 

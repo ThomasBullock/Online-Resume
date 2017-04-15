@@ -2,7 +2,7 @@ main {
 	
 	section.about {
 		
-		@include outer-container(100%);
+		// @include outer-container(100%);
 			// background: lighten($twitter-blue, 40%);			
 			
 			.wrapper {
@@ -28,9 +28,9 @@ main {
 				position: absolute;				
 				width: 0;
 				height: 0;
-				border-left: 49vw solid transparent;
-				border-right: 49vw solid transparent;
-				border-top: 120vh solid lighten($twitter-blue, 40%);
+				border-left: 50vw solid transparent;
+				border-right: 50vw solid transparent;
+				border-top: 60vh solid lighten($twitter-blue, 40%);
 			}
 
 
@@ -48,6 +48,11 @@ main {
 				}
 
 			}
+
+			.triangle-down {
+				border-top: 110vh solid lighten($twitter-blue, 40%);
+			}						
+			
 		} // end of tablet media query
 
 
@@ -58,14 +63,20 @@ main {
 	==================================== */
 
 		@include media($desktop) {
+			margin-top: $base-spacing * 2;	
 			.wrapper {
 				@include outer-container(80%);
 
 				h1{
-					padding-top: $base-spacing * 4;
+					// padding-top: $base-spacing * 4;
 				}
 															
 			}
+			
+			.triangle-down {
+				border-top: 120vh solid lighten($twitter-blue, 40%);
+			}			
+			
 		}  // end of desktop media query
 
 		

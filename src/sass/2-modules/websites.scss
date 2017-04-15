@@ -10,7 +10,7 @@ main {
 			filter: drop-shadow(0 4px 2px rgba(34, 34, 34, .5));
 		}
 		
-		@include outer-container(100%);
+		// @include outer-container(100%);
 			// background: $snow;
 			text-align: center;
 			
@@ -55,7 +55,7 @@ main {
 			width: 0;
 			height: 0;
 			border-top: 100vh solid transparent;
-			border-right: 99vw solid lighten($twitter-blue, 40%);
+			border-right: 100vw solid lighten($twitter-blue, 40%);
 		}
 		
 		.square {
@@ -64,7 +64,7 @@ main {
 			top: 100vh;
 			background: lighten($twitter-blue, 40%);
 			height: 100vh;
-			width: 99vw;		
+			width: 100%;		
 		}
 		
 
@@ -75,7 +75,7 @@ main {
 
 		@include media($tablet) {
 			height: 100vh;
-			margin-top: $base-spacing * 2;							
+			margin-top: 0;							
 			.wrapper {
 				@include outer-container(80%);
 

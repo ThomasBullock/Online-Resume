@@ -2,8 +2,8 @@ main {
 	
 
 	section.contact {
-		margin-top: $base-spacing * 6;
-		@include outer-container(99%);
+		margin-top: $base-spacing * 8;
+		// @include outer-container(99%);
 		text-align: center;
 
 		
@@ -42,7 +42,8 @@ main {
 	  TABLET
 	==================================== */
 
-		@include media($tablet) {				
+		@include media($tablet) {
+			margin-top: $base-spacing * 4;				
 			.wrapper {
 				@include outer-container(80%);
 
