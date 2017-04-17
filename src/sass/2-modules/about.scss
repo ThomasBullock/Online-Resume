@@ -1,7 +1,7 @@
 main {
 	
 	section.about {
-		
+				// padding-top: $base-spacing * 12;
 		// @include outer-container(100%);
 			// background: lighten($twitter-blue, 40%);			
 			
@@ -10,6 +10,14 @@ main {
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+
+				h1{
+					padding-top: $base-spacing * 2;
+					
+					@include media($phone-landscape) {
+						padding-top: $base-spacing * 32;						
+					}		
+				}
 
 			} 
 
@@ -30,7 +38,7 @@ main {
 				height: 0;
 				border-left: 50vw solid transparent;
 				border-right: 50vw solid transparent;
-				border-top: 60vh solid lighten($twitter-blue, 40%);
+				border-top: 80vh solid lighten($twitter-blue, 40%);
 			}
 
 
