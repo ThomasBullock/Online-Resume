@@ -18,6 +18,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task("concatScripts", function(){
 		return gulp.src([
+			'src/javascript/svgLibrary.js',
 			'src/javascript/main.js'])
 		.pipe(maps.init())
 		.pipe(concat('app.js'))

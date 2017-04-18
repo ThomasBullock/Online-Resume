@@ -36,16 +36,21 @@ main {
 					.container {
 						margin-top: $base-spacing * 2;
 						display: flex;
-						flex-wrap: wrap;
-						
+						flex-wrap: nowrap;
+
+						img {
+							// width: 80%;
+							margin: 0 auto;
+						}
+												
 						.left-col {
-								flex: 1 1 100%;
+								flex: 1 1 50%;
 								margin-left: 0;
 								margin-right: 0;									
 						}
 						
 						.right-col {
-								flex: 1 1 100%;
+								flex: 1 1 50%;
 								margin-left: 0;
 								margin-right: 0;													
 						}

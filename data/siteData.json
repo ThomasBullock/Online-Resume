@@ -1,0 +1,104 @@
+{
+	"Webapps" : 
+	[
+		{
+			"title": "MyFootyTeam.net",
+			"img": "img/MyFootyTeam.png",
+			"url": "http://myfootyteam.net/",
+			"blurb": "My first attempt at the MVC pattern in Javascript. This app allows a user to create their own Essendon footy squad with average team statistics generated as each player is added. A PNG of the squad can then be exported.",
+			"badges": [
+				"bootstrap",
+				"jQuery",
+				"js"
+			]
+		},
+		{
+			"title": "Phaser Game",
+			"img": "img/MotsPaint.png",
+			"url": "https://thomasbullock.github.io/FCCGameDevChallengeDec/",
+			"blurb": "An online collaboration with a fellow Free Code Camp student from France. This game is powered by the Phaser framework. Graphics created by me in Adobe Illustrator.",
+			"badges": [
+				"phaser", "js", "ai"
+			]
+		},
+		{
+			"title": "Dynamic Frontend Cheatsheet",
+			"img": "img/Cheatsheet.png",
+			"url": "http://nasty-pie.surge.sh/",
+			"blurb": "I made this frontend cheat sheet as an excuse to play around with Knockout JS and to organise into one place the various notes and cheatsheets I'd accumulated. Cheats are loaded from JSON with each cheat having its own array of 'tags' allowing for dynamic filtering of cheats via user input.",
+			"badges": [
+				"jQuery", "js" 
+			]
+		},
+		{
+			"title": "Simon Game",
+			"img": "img/SimonGame.png",
+			"url": "https://thomasbullock.github.io/Simon-Game/",
+			"blurb": "Do you remember the classic Simon game? I don't! But as the final project of the Free Code Camp Front End Development Certification I made an online version. Using the React libary I made a concerted effort to replicate the behaviour of the real thing.",
+			"badges": [
+				"react", "sketch"
+			]
+		},				
+		{
+			"title": "Mots Psychedelic Paint",
+			"img": "img/MotsPaint.png",
+			"url": "http://psychedelic-paint.surge.sh/",
+			"blurb": "This Canvas paint application is powered by jQuery and jQuery UI. User can select and add there own colors, adjust brush size and experiment with different blend modes. Resultant masterpieces can be exported to PNG.",
+			"badges": [
+				"jQuery", "jQueryUI"
+			]
+		},				
+		{
+			"title": "RomaDoro Clock",
+			"img": "img/RomaDoro.png",
+			"url": "https://thomasbullock.github.io/RomaDoro-Clock/",
+			"blurb": "The tastier egg shaped version of the Pomodoro timer. Made with vanilla javscript with a bit of help from the moment js library.",
+			"badges": [
+				"js", "sketch"
+			]
+		}		
+	],
+	"Websites" : 
+
+	[
+		{
+			"title": "WazMoz.com",
+			"img": "img/WazMoz.png",
+			"url": "http://wazmoz.com/",
+			"blurb": "Customized bootsrap website. Fully responsive and W3C compliant. I created the mosaic themed navbar and instagram logo in Adobe Illustrator. Also setup a server side PHP script to process contact form with reCaptcha spam prevention.",
+			"badges": [
+				"bootstrap","jQuery","ai" 
+			]
+		},
+		{
+			"title": "BarAtlas.com",
+			"img": "img/BarAtlas.png",
+			"url": "http://reflective-day.surge.sh/",
+			"blurb": "My pet project. I'm currently developing this bar search engine with React js. Still under development.",
+			"badges": [
+				"react", "js"
+			]
+		},
+		{
+			"title": "ChomSiam Wordpress Blog",
+			"img": "img/ChomSiam.png",
+			"url": "http://chomsiam.tbullock.net/wp/",
+			"blurb": "Custom made bootstrap template for Wordpress I made to blog my recent trip to Thailand.",
+			"badges": [
+				"php", "wordpress"
+			]
+		},
+		{
+			"title": "CochlearKill.com",
+			"img": "img/CochlearKill.png",
+			"url": "http://cochlearkill.com/",
+			"blurb": "React powered website I put together for my band Cochlear Kill.",
+			"badges": [
+				"react"  
+			]
+		}				
+
+	]
+		
+	
+}

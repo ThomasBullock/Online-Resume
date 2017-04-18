@@ -1150,9 +1150,6 @@ main section.webapps {
 	  DESKTOP LARGE
 	==================================== */ }
   main section.webapps img {
-    max-width: 100%;
-    height: auto;
-    display: block;
     -webkit-filter: drop-shadow(0 4px 2px rgba(34, 34, 34, 0.5));
             filter: drop-shadow(0 4px 2px rgba(34, 34, 34, 0.5)); }
   main section.webapps::after {
@@ -1170,9 +1167,6 @@ main section.webapps {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start; }
-    @media screen and (min-width: 551px) and (max-width: 767px) {
-      main section.webapps .wrapper h1 {
-        margin-top: 6em; } }
     main section.webapps .wrapper h3 {
       margin-top: 1.5em; }
     main section.webapps .wrapper .container {
@@ -1182,6 +1176,8 @@ main section.webapps {
       display: flex;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
+      main section.webapps .wrapper .container img {
+        margin: 0 auto; }
       main section.webapps .wrapper .container .left-col {
         -webkit-box-flex: 1;
             -ms-flex: 1 1 100%;
@@ -1202,45 +1198,49 @@ main section.webapps {
     border-bottom: 100vh solid transparent;
     border-right: 100vw solid #def1fd; }
   @media screen and (min-width: 768px) and (max-width: 999px) {
-    main section.webapps .wrapper {
-      padding-top: 6em;
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto; }
-      main section.webapps .wrapper::after {
-        clear: both;
-        content: "";
-        display: block; }
-      main section.webapps .wrapper h3 {
-        margin-top: 0; }
-      main section.webapps .wrapper .container {
-        margin-top: 3em;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap; }
-        main section.webapps .wrapper .container p {
-          margin-top: 0.75em; }
-        main section.webapps .wrapper .container .left-col {
-          -webkit-box-flex: 1;
-              -ms-flex: 1 1 50%;
-                  flex: 1 1 50%; }
-        main section.webapps .wrapper .container .right-col {
-          -webkit-box-flex: 1;
-              -ms-flex: 1 1 50%;
-                  flex: 1 1 50%;
-          margin-left: 1.5em; }
-      main section.webapps .wrapper .container:nth-child(odd) .left-col {
-        -webkit-box-ordinal-group: 3;
-            -ms-flex-order: 2;
-                order: 2; }
-      main section.webapps .wrapper .container:nth-child(odd) .right-col {
-        -webkit-box-ordinal-group: 2;
-            -ms-flex-order: 1;
-                order: 1;
-        margin-right: 1.5em;
-        margin-left: 0; } }
+    main section.webapps {
+      height: 100vh; }
+      main section.webapps .wrapper {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto; }
+        main section.webapps .wrapper::after {
+          clear: both;
+          content: "";
+          display: block; }
+        main section.webapps .wrapper h3 {
+          margin-top: 0; }
+        main section.webapps .wrapper .container {
+          margin-top: 3em;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap; }
+          main section.webapps .wrapper .container p {
+            margin-top: 0.75em; }
+          main section.webapps .wrapper .container .left-col {
+            -webkit-box-flex: 1;
+                -ms-flex: 1 1 50%;
+                    flex: 1 1 50%; }
+          main section.webapps .wrapper .container .right-col {
+            -webkit-box-flex: 1;
+                -ms-flex: 1 1 50%;
+                    flex: 1 1 50%;
+            margin-left: 1.5em; }
+        main section.webapps .wrapper .container:nth-child(odd) .left-col {
+          -webkit-box-ordinal-group: 3;
+              -ms-flex-order: 2;
+                  order: 2; }
+        main section.webapps .wrapper .container:nth-child(odd) .right-col {
+          -webkit-box-ordinal-group: 2;
+              -ms-flex-order: 1;
+                  order: 1;
+          margin-right: 1.5em;
+          margin-left: 0; }
+      main section.webapps .triangle-bottomleft {
+        border-bottom: 100vh solid transparent;
+        border-right: 100vw solid #def1fd; } }
   @media screen and (min-width: 1000px) {
     main section.webapps img {
       width: 100%; }
@@ -1332,18 +1332,20 @@ main section.websites {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; }
+      main section.websites .wrapper .container img {
+        margin: 0 auto; }
       main section.websites .wrapper .container .left-col {
         -webkit-box-flex: 1;
-            -ms-flex: 1 1 100%;
-                flex: 1 1 100%;
+            -ms-flex: 1 1 50%;
+                flex: 1 1 50%;
         margin-left: 0;
         margin-right: 0; }
       main section.websites .wrapper .container .right-col {
         -webkit-box-flex: 1;
-            -ms-flex: 1 1 100%;
-                flex: 1 1 100%;
+            -ms-flex: 1 1 50%;
+                flex: 1 1 50%;
         margin-left: 0;
         margin-right: 0; }
   main section.websites .triangle-topleft {
@@ -1630,11 +1632,48 @@ main {
     clear: both;
     content: "";
     display: block; }
+  main .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    main .title h1 {
+      display: inline-block; }
+    main .title button {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      margin-left: 0.75em; }
+      main .title button:hover {
+        cursor: pointer; }
+      main .title button.active {
+        background: #1da1f2; }
+      main .title button h3 {
+        display: inline-block; }
   main a.smooth-link {
     position: relative;
     height: 64px; }
-  main .tech-list li {
-    display: inline-block; }
+  main .tech-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    main .tech-list li svg {
+      max-width: 80px;
+      max-height: 69px; }
   main svg.fa {
     -webkit-transition: all .5s;
     transition: all .5s;

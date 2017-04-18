@@ -1,4 +1,20 @@
-(function(global){
+
+(function(global, svgs){
+
+		function arrayFromObject(object, key) {
+			const array = [];
+			if(key) {
+				for (var key in object) { 
+					array.push({[key] : object[key]} )
+				}		
+			} else {
+				for (var key in object) { 
+					array.push(object[key])
+				}
+			}
+			
+			return array;
+		}
 
 
 		let c,
@@ -209,8 +225,122 @@ function onClick(e) {
 document.body.addEventListener('click', onClick, false); // Smooth scroll link eventListener
 
 
+function loadContent(e, selection) {
+
+	const item = parseInt(e.target.dataset.array)
+	console.log(selection)
+	
+	fetch('../data/siteData.json')
+		.then( (response) =>  {
+			return response.json()
+		}).then( (json) => {
+			console.log(json[selection])
+			
+			var data1 = arrayFromObject(json[selection])[item]
+			var data2 = arrayFromObject(json[selection])[item + 1]
+			
+			console.log(data1.title);
+			
+			update[selection](data1, data2, e.target)
+		})
+	
+}
 
 
+
+var update = (function updater(svgs){
+	const appButtons = document.querySelectorAll('.webapps .title button');
+	const siteButtons = document.querySelectorAll('.websites .title button');	
+	const links = document.querySelectorAll('.container .left-col a');
+	const titles = document.querySelectorAll('.container .right-col h3');
+	const images = document.querySelectorAll('.container .left-col img');
+	const descriptions = document.querySelectorAll('.container .right-col p');
+	const techBadges = document.querySelectorAll('.container .right-col .tech-list')
+	
+	console.log(techBadges)
+	
+	// console.log(buttons)
+	function webApps(data1, data2, btn) {
+		console.log(data1)
+		links[0].href = data1.url;
+		titles[0].textContent = data1.title;
+		images[0].src = data1.img;
+		images[0].alt = data1.title;
+		descriptions[0].textContent = data1.blurb;
+		console.log(svgs.sketch)
+		
+		techBadges[0].innerHTML = "";
+		techBadges[1].innerHTML = "";		
+		
+		data1.badges.forEach( (badge) => {
+			let listItem = document.createElement('li')
+			listItem.innerHTML = svgs[badge];
+			techBadges[0].appendChild(listItem);
+		})
+
+
+		links[1].href = data2.url;		
+		titles[1].textContent = data2.title;
+		images[1].src = data2.img;
+		images[1].alt = data2.title;
+		descriptions[1].textContent = data2.blurb;
+
+		data2.badges.forEach( (badge) => {		
+			let listItem = document.createElement('li')
+			listItem.innerHTML = svgs[badge];
+			techBadges[1].appendChild(listItem);
+		})
+				
+		appButtons.forEach( (btn) => btn.classList.remove('active') );
+		btn.classList.add('active');
+		
+	}
+	
+	function webSites(data1, data2, btn) {
+		console.log(data1)
+		links[2].href = data1.url;
+		titles[2].textContent = data1.title;
+		images[2].src = data1.img;
+		images[2].alt = data1.title;
+		descriptions[2].textContent = data1.blurb;
+
+		techBadges[2].innerHTML = "";
+		
+		data1.badges.forEach( (badge) => {
+			let listItem = document.createElement('li')
+			listItem.innerHTML = svgs[badge];
+			techBadges[2].appendChild(listItem);
+		})
+
+		links[3].href = data2.url;		
+		titles[3].textContent = data2.title;
+		images[3].src = data2.img;
+		images[3].alt = data2.title;
+		descriptions[3].textContent = data2.blurb;
+		
+		techBadges[3].innerHTML = "";		
+
+		
+		data2.badges.forEach( (badge) => {
+			let listItem = document.createElement('li')
+			listItem.innerHTML = svgs[badge];
+			techBadges[3].appendChild(listItem);
+		})
+						
+		siteButtons.forEach( (btn) => btn.classList.remove('active') );
+		btn.classList.add('active');		
+	}
+	
+	return {
+		Webapps : webApps,
+		Websites : webSites
+	}
+	
+})(svgs)
+
+
+const title = document.querySelectorAll('.container .right-col h3')
+console.log(title)
 
 const slidingfPanelButton = document.querySelector('.sliding-panel-button');
 
@@ -244,6 +374,29 @@ phoneButton.addEventListener('click', (e) => {
 	window.location.href = "tel:0403703950"
 })
 		
+		
+const webAppButtons = document.querySelectorAll('.webapps .title button');
+const webSiteButtons = document.querySelectorAll('.websites .title button');
+
+webAppButtons.forEach( (btn) => {
+	btn.addEventListener('click', (e) => {
+		console.log(e.target)
+		loadContent(e, "Webapps")
+	}, false)
+})
+
+webSiteButtons.forEach( (btn) => {
+	btn.addEventListener('click', (e) => {
+		console.log(e.target)
+		loadContent(e, "Websites")
+	}, false)
+})
+
+console.log(svgs)
+// page2.addEventListener('click', (e) => {
+
+// 	loadContent(e)
+// }, false )		
 	
-}(window));
+}(window, svgLibrary));
 
