@@ -12,11 +12,8 @@ main {
 				align-items: center;
 
 				h1{
-					padding-top: $base-spacing * 2;
-					
-					@include media($phone-landscape) {
-						padding-top: $base-spacing * 32;						
-					}		
+					padding-top: $base-spacing * 2;		
+
 				}
 
 			} 

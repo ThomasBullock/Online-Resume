@@ -8,7 +8,7 @@ main {
 		height: 100vh;
 		// height: 1000px
 		img {
-			// @include img-responsive();
+			@include img-responsive();
 			// width: 90%;
 			// margin: 0 auto;			
 			filter: drop-shadow(0 4px 2px rgba(34, 34, 34, .5));
@@ -53,7 +53,11 @@ main {
 								margin-left: 0;
 								margin-right: 0;													
 						}
-					}					
+					}
+
+					.container:nth-child(odd) {
+						display: none;
+					}												
 
 			} 
 
@@ -108,6 +112,7 @@ main {
 				}
 				
 				.container:nth-child(odd) {
+					display: flex;
 					.left-col {
 							order: 2;
 					}
@@ -173,6 +178,7 @@ main {
 				}
 				
 				.container:nth-child(odd) {
+					display: flex;
 					.left-col {
 							order: 2;
 					}

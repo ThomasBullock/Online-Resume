@@ -1,8 +1,8 @@
 main {
 	
 	section.websites {
-		margin-top: $base-spacing * 26;
-		height: 200vh;
+
+		height: 100vh;
 		img {
 			@include img-responsive();
 			// width: 90%;
@@ -16,11 +16,7 @@ main {
 			
 			
 			.wrapper {
-				@include media($phone-landscape) {
-					h1 {
-						margin-top: $base-spacing * 16;	
-					}
-				}	
+
 				
 				// width: 80%;
 				max-height: 100%;
@@ -36,7 +32,7 @@ main {
 					.container {
 						margin-top: $base-spacing * 2;
 						display: flex;
-						flex-wrap: nowrap;
+						flex-wrap: wrap;
 
 						img {
 							// width: 80%;
@@ -44,17 +40,21 @@ main {
 						}
 												
 						.left-col {
-								flex: 1 1 50%;
+								flex: 1 1 100%;
 								margin-left: 0;
 								margin-right: 0;									
 						}
 						
 						.right-col {
-								flex: 1 1 50%;
+								flex: 1 1 100%;
 								margin-left: 0;
 								margin-right: 0;													
 						}
-					}					
+					}
+
+					.container:nth-child(odd) {
+						display: none;
+					}				
 
 			} 
 
@@ -90,9 +90,6 @@ main {
 			.wrapper {
 				@include outer-container(80%);
 
-				h1{
-					padding-top: $base-spacing * 2;
-				}
 				
 				h3 {
 					margin-top: 0;
@@ -118,6 +115,7 @@ main {
 				}
 				
 				.container:nth-child(odd) {
+					display: flex;
 					.left-col {
 							order: 2;
 					}
@@ -147,9 +145,7 @@ main {
 			.wrapper {
 				@include outer-container(80%);
 
-				h1{
-					// padding-top: $base-spacing;
-				}
+
 				
 				h3 {
 					margin-top: 0;
@@ -166,16 +162,17 @@ main {
 					}
 										
 					.left-col {
-							flex: 1 1 50%;
+							flex: 1 1 100%;
 					}
 					
 					.right-col {
-							flex: 1 1 50%;
+							flex: 1 1 100%;
 							margin-left: $base-spacing;						
 					}
 				}
 				
 				.container:nth-child(odd) {
+					display: flex;
 					.left-col {
 							order: 2;
 					}

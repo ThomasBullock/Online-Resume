@@ -14,6 +14,7 @@ main {
 	
 	.title {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;				
 
@@ -22,17 +23,25 @@ main {
 
 		}
 
+		ul.desktop-buttons {
+			display: none;
+		}
+
+		ul.mob-buttons {
+			flex: 1 1 100%;
+		}			
+
 		button {
 			display: inline-block;
 			width: $base-spacing;
 			height: $base-spacing;
+			margin-bottom: 14px;
 			padding: 0;
 			
 
 			border-radius: 50%;
 			border: none;
 			
-			margin-left: $base-spacing / 2;
 			
 			&:hover {
 				cursor: pointer;
@@ -113,7 +122,24 @@ section {
 
 	section {
 		.wrapper {
-			padding: $base-spacing $base-spacing;			
+			padding: $base-spacing $base-spacing;	
+
+
+		.title {
+			flex-wrap: nowrap;
+
+			ul.mob-buttons {
+				display: none;
+			}
+
+			ul.desktop-buttons {
+				display: inline-block;
+				margin-left: $base-spacing;
+			}
+		}
+
+
+
 		}
 	}
 }
@@ -127,7 +153,23 @@ section {
 
 	section {
 		.wrapper {
-			padding: $base-spacing * 2 $base-spacing * 2;				
+			padding: $base-spacing * 2 $base-spacing * 2;
+
+		.title {
+			flex-wrap: nowrap;
+			
+			ul.mob-buttons {
+				display: none;
+			}			
+
+			ul.desktop-buttons {
+				display: inline-block;
+				margin-left: $base-spacing;
+			}
+
+
+		}
+
 		}
 	}
 

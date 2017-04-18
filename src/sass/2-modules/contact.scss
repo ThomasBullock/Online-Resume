@@ -2,11 +2,7 @@ main {
 	
 
 	section.contact {
-		margin-top: $base-spacing * 12;
-		
-		@include media($phone-landscape) {
-			margin-top: $base-spacing * 72;						
-		}		
+
 		
 		text-align: center;
 
