@@ -64,7 +64,7 @@ gulp.task('watchFiles', function() {
 
 gulp.task('build', ["minifyScripts", "minifyCss"], function(){
 	console.log("Remember to change index.html links to minified versions");
-	return gulp.src(["js/app.min.js", "index.html", "img/**", "fonts/**"] , { base: "./"})
+	return gulp.src(["js/app.min.js", "index.html", "img/**", "data/**", "fonts/**"] , { base: "./"})
 			.pipe(gulp.dest('dist'));
 });
 

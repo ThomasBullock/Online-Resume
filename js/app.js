@@ -1,3 +1,11 @@
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var svgLibrary = {
 	ai: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="32" viewBox="0 0 34 32"><path fill="#444444" d="M21.66 10.97c0.695 0 1.264-0.563 1.264-1.253s-0.569-1.253-1.264-1.253c-0.695 0-1.264 0.563-1.264 1.253 0 0.695 0.563 1.253 1.264 1.253z"></path><path fill="#444444" d="M20.425 12.067h2.442v9.183h-2.442v-9.183z"></path><path fill="#444444" d="M12.655 18.171h3.304l0.893 3.076h2.501l-3.632-12.066h-3.036v1.191l-3.185 10.875h2.262l0.893-3.076zM14.292 11.328l1.221 4.733h-2.441l1.22-4.733z"></path><path fill="#444444" d="M3.002 2.316v27.007h27.582v-27.007h-27.582zM28.516 27.197h-23.406v-22.755h23.406l-0 22.755z"></path></svg>',
 	bootstrap: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path fill="#444444" d="M8.171 4.999c-0.562 0.083-1.237 0.347-1.716 0.675-0.313 0.207-0.717 0.596-0.95 0.901-0.26 0.343-0.577 1.003-0.702 1.456l-0.106 0.377v15.727l0.106 0.377c0.124 0.453 0.441 1.113 0.702 1.456 0.49 0.641 1.245 1.181 2.003 1.426 0.626 0.2 0.313 0.192 8.486 0.192 8.177 0 7.864 0.008 8.486-0.196 0.762-0.245 1.516-0.781 2.003-1.422 0.26-0.347 0.581-1.007 0.705-1.456l0.102-0.377v-15.727l-0.106-0.377c-0.124-0.452-0.441-1.113-0.701-1.456-0.234-0.306-0.637-0.694-0.95-0.901-0.336-0.23-0.883-0.479-1.305-0.596l-0.37-0.102-7.732-0.004c-4.251-0.004-7.834 0.008-7.954 0.026zM18.709 9.159c1.192 0.196 2.006 0.588 2.538 1.222 0.226 0.268 0.49 0.8 0.6 1.196 0.068 0.26 0.079 0.407 0.083 1.056 0.004 0.683-0.004 0.784-0.083 1.052-0.23 0.8-0.732 1.414-1.543 1.89l-0.279 0.162 0.2 0.064c0.305 0.102 0.815 0.366 1.075 0.562 0.649 0.49 1.101 1.252 1.282 2.161 0.087 0.453 0.087 1.422-0.004 1.837-0.358 1.633-1.622 2.768-3.523 3.149-0.728 0.147-0.916 0.155-4.824 0.155h-3.82v-14.6l3.953 0.015c3.538 0.011 3.99 0.019 4.345 0.079zM13.655 13.277v1.72l1.822-0.015c1.709-0.019 1.837-0.023 2.112-0.098 0.86-0.234 1.233-0.728 1.233-1.633 0-0.694-0.245-1.143-0.777-1.407-0.471-0.234-0.981-0.283-2.983-0.287h-1.407v1.72zM13.655 19.176v2.003l1.991-0.015c2.237-0.015 2.312-0.023 2.863-0.29 0.634-0.309 0.916-0.815 0.916-1.641 0-1.063-0.422-1.652-1.395-1.946-0.275-0.087-0.328-0.087-2.327-0.102l-2.048-0.011v2.003z"></path></svg>',
@@ -8,412 +16,435 @@ var svgLibrary = {
 	php: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path fill="#444444" d="M10.372 13.069h-3.967l-1.715 8.684h2.037l0.429-2.251h1.93c1.822 0.107 3.86-1.394 3.86-3.967 0-1.501-0.858-2.359-2.573-2.466zM8.871 17.894h-1.287l0.536-3.216h1.394c0.75 0 1.287 0.322 1.287 0.965-0.107 1.823-0.965 2.144-1.93 2.251zM17.555 13.069h-1.93l0.429-2.251h-2.037l-1.715 8.684h2.037l0.965-4.824h1.608c0.751 0 0.751 0.322 0.643 0.858l-0.75 3.967h2.144l0.75-4.396c0.214-1.072-0.429-1.93-2.144-2.037zM24.738 13.069h-3.967l-1.715 8.684h2.037l0.429-2.251h1.93c1.823 0.107 3.86-1.394 3.86-3.967 0-1.501-0.858-2.359-2.573-2.466zM23.237 17.894h-1.287l0.536-3.216h1.394c0.751 0 1.287 0.322 1.287 0.965-0.107 1.823-0.965 2.144-1.93 2.251z"></path></svg>',
 	wordpress: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path fill="#444444" d="M4.681 16.27c0 4.473 2.6 8.342 6.371 10.171l-5.391-14.773c-0.628 1.407-0.98 2.962-0.98 4.602zM23.616 15.699c0-1.397-0.503-2.365-0.932-3.118-0.573-0.932-1.109-1.719-1.109-2.652 0-1.039 0.785-2.006 1.898-2.006 0.048 0 0.097 0.007 0.145 0.010-2.010-1.842-4.689-2.968-7.632-2.968-3.95 0-7.424 2.027-9.444 5.096 0.266 0.008 0.515 0.014 0.727 0.014 1.183 0 3.013-0.145 3.013-0.145 0.608-0.034 0.68 0.859 0.071 0.932 0 0-0.611 0.071-1.293 0.108l4.117 12.243 2.474-7.418-1.762-4.825c-0.609-0.037-1.185-0.108-1.185-0.108-0.61-0.037-0.537-0.966 0.073-0.932 0 0 1.865 0.145 2.976 0.145 1.182 0 3.014-0.145 3.014-0.145 0.607-0.034 0.679 0.859 0.070 0.932 0 0-0.611 0.071-1.292 0.108l4.085 12.15 1.128-3.766c0.573-1.47 0.861-2.686 0.861-3.655zM16.184 17.259l-3.393 9.856c1.012 0.297 2.082 0.459 3.194 0.459 1.315 0 2.579-0.228 3.754-0.642-0.030-0.048-0.058-0.099-0.081-0.154l-3.474-9.519zM25.904 10.846c0.050 0.361 0.078 0.747 0.078 1.164 0 1.146-0.215 2.435-0.861 4.049l-3.453 9.981c3.36-1.958 5.619-5.598 5.619-9.769 0-1.967-0.502-3.814-1.384-5.425z"></path></svg>',
 	react: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="32" viewBox="0 0 34 32"><path fill="#444444" d="M19.314 15.987c0 1.321-1.071 2.392-2.392 2.392s-2.392-1.071-2.392-2.392c0-1.321 1.071-2.392 2.392-2.392s2.392 1.071 2.392 2.392z"></path><path fill="#444444" d="M16.922 24.783c1.878 1.826 3.729 2.906 5.221 2.906 0.489 0 0.952-0.103 1.337-0.334 1.337-0.772 1.826-2.701 1.363-5.453-0.077-0.489-0.18-0.977-0.309-1.492 0.514-0.154 0.977-0.309 1.44-0.463 2.598-1.003 4.038-2.392 4.038-3.909 0-1.543-1.44-2.932-4.038-3.909-0.463-0.18-0.926-0.334-1.44-0.463 0.129-0.514 0.232-1.003 0.309-1.492 0.437-2.803-0.051-4.758-1.389-5.53-0.386-0.231-0.849-0.334-1.337-0.334-1.466 0-3.344 1.080-5.221 2.906-1.852-1.826-3.704-2.906-5.195-2.906-0.489 0-0.952 0.103-1.337 0.334-1.337 0.772-1.826 2.701-1.363 5.453 0.077 0.489 0.18 0.977 0.309 1.492-0.514 0.154-0.977 0.309-1.44 0.463-2.598 1.003-4.038 2.392-4.038 3.909 0 1.543 1.44 2.932 4.038 3.909 0.463 0.18 0.926 0.334 1.44 0.463-0.129 0.514-0.232 1.003-0.309 1.492-0.437 2.752 0.051 4.707 1.363 5.453 0.386 0.232 0.849 0.334 1.337 0.334 1.492 0.051 3.344-1.029 5.221-2.829v0zM15.481 21.311c0.463 0.026 0.952 0.026 1.44 0.026s0.977 0 1.44-0.026c-0.463 0.617-0.952 1.183-1.44 1.723-0.489-0.54-0.977-1.106-1.44-1.723zM12.292 18.662c0.257 0.437 0.489 0.849 0.772 1.26-0.797-0.103-1.543-0.232-2.263-0.386 0.232-0.694 0.489-1.415 0.797-2.135 0.206 0.411 0.437 0.849 0.694 1.26zM10.8 12.463c0.72-0.154 1.466-0.283 2.263-0.386-0.257 0.412-0.514 0.823-0.772 1.26s-0.489 0.849-0.694 1.286c-0.334-0.746-0.592-1.466-0.797-2.161zM12.215 15.987c0.334-0.694 0.694-1.389 1.106-2.083 0.386-0.669 0.823-1.337 1.26-2.006 0.772-0.051 1.543-0.077 2.341-0.077 0.823 0 1.595 0.026 2.341 0.077 0.463 0.669 0.874 1.337 1.26 2.006 0.412 0.694 0.772 1.389 1.106 2.083-0.334 0.694-0.694 1.389-1.106 2.083-0.386 0.669-0.823 1.337-1.26 2.006-0.772 0.051-1.543 0.077-2.341 0.077-0.823 0-1.595-0.026-2.341-0.077-0.463-0.669-0.874-1.337-1.26-2.006-0.412-0.695-0.772-1.389-1.106-2.083v0zM22.272 14.598l-0.694-1.286c-0.257-0.437-0.489-0.849-0.772-1.26 0.797 0.103 1.543 0.232 2.263 0.386-0.231 0.72-0.489 1.44-0.797 2.161v0zM22.272 17.376c0.309 0.72 0.566 1.44 0.797 2.135-0.72 0.154-1.466 0.283-2.263 0.386 0.257-0.412 0.514-0.823 0.772-1.26 0.232-0.386 0.463-0.823 0.694-1.26v0zM22.863 26.301c-0.206 0.129-0.463 0.18-0.746 0.18-1.26 0-2.829-1.029-4.372-2.572 0.746-0.797 1.466-1.698 2.186-2.701 1.209-0.103 2.366-0.283 3.447-0.54 0.129 0.463 0.206 0.926 0.283 1.389 0.36 2.186 0.077 3.755-0.797 4.244zM24.201 12.746c2.881 0.823 4.604 2.083 4.604 3.241 0 1.003-1.183 2.006-3.266 2.804-0.412 0.154-0.874 0.309-1.337 0.437-0.334-1.055-0.746-2.135-1.26-3.241 0.514-1.106 0.952-2.186 1.26-3.241v0zM22.143 5.493c0.283 0 0.514 0.051 0.746 0.18 0.849 0.489 1.157 2.032 0.797 4.244-0.077 0.437-0.18 0.9-0.283 1.389-1.080-0.232-2.238-0.412-3.447-0.54-0.694-1.003-1.44-1.903-2.186-2.701 1.543-1.518 3.112-2.572 4.372-2.572zM18.362 10.663c-0.463-0.026-0.952-0.026-1.44-0.026s-0.977 0-1.44 0.026c0.463-0.617 0.952-1.183 1.44-1.723 0.489 0.54 0.977 1.132 1.44 1.723v0zM10.98 5.673c0.206-0.129 0.463-0.18 0.746-0.18 1.26 0 2.829 1.029 4.372 2.572-0.746 0.797-1.466 1.697-2.186 2.701-1.209 0.103-2.366 0.283-3.447 0.54-0.129-0.463-0.206-0.926-0.283-1.389-0.36-2.186-0.077-3.729 0.797-4.244v0zM9.643 19.228c-2.881-0.823-4.604-2.083-4.604-3.241 0-1.003 1.183-2.006 3.266-2.803 0.412-0.154 0.874-0.309 1.337-0.437 0.334 1.055 0.746 2.135 1.26 3.241-0.514 1.106-0.952 2.212-1.26 3.241zM10.183 22.057c0.077-0.437 0.18-0.9 0.283-1.389 1.080 0.232 2.238 0.412 3.447 0.54 0.694 1.003 1.44 1.903 2.186 2.701-1.543 1.517-3.112 2.572-4.372 2.572-0.283 0-0.514-0.051-0.746-0.18-0.875-0.489-1.157-2.058-0.797-4.244z"></path></svg>',
-	sketch: '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="28px" viewBox="0 0 494 447" enable-background="new 0 0 494 447" xml:space="preserve"><g id="Page-1"><g id="Sketch-Flat-Logo" transform="translate(-9.000000, -28.000000)"><g id="Group" transform="translate(9.000000, 28.000000)"><g id="Base"><polygon id="Polygon" fill="#B3B3B3" points="247,447 0,160 107,15 247,0 387,15 494,160"/></g><g id="Bottom-Back" transform="translate(0.000000, 160.000000)"><polygon id="Polygon_1_" fill="#878787" points="247,287 0,0 494,0"/></g><g id="Bottom-Mid" transform="translate(100.000000, 160.000000)"><polygon id="Polygon_2_" fill="#B3B3B3" points="147,287 0,0 294,0"/></g><g id="Top-Mid" transform="translate(100.000000, 0.000000)"><polygon id="Polygon_3_" fill="#EDEDED" points="147,0 0,160 294,160"/></g><g id="Top-Side-Left" transform="translate(0.000000, 15.000000)"><polygon id="Polygon_4_" fill="#B3B3B3" points="107,0 52,73 0,145 101,145"/></g><g id="Top-Side-Right" transform="translate(440.500000, 87.500000) scale(-1, 1) translate(-440.500000, -87.500000) translate(387.000000, 15.000000)"><polygon id="Polygon_5_" fill="#B3B3B3" points="107,0 52,73 0,145 101,145"/></g><g id="Top-Left" transform="translate(100.000000, 0.000000)"><polygon id="Polygon_6_" fill="#C9C9C9" points="7,15 0,160 147,0"/></g><g id="Top-Right" transform="translate(247.000000, 0.000000)"><polygon id="Polygon_7_" fill="#C9C9C9" points="140,15 147,160 0,0"/></g></g></g></g></svg>'	
+	sketch: '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="28px" viewBox="0 0 494 447" enable-background="new 0 0 494 447" xml:space="preserve"><g id="Page-1"><g id="Sketch-Flat-Logo" transform="translate(-9.000000, -28.000000)"><g id="Group" transform="translate(9.000000, 28.000000)"><g id="Base"><polygon id="Polygon" fill="#B3B3B3" points="247,447 0,160 107,15 247,0 387,15 494,160"/></g><g id="Bottom-Back" transform="translate(0.000000, 160.000000)"><polygon id="Polygon_1_" fill="#878787" points="247,287 0,0 494,0"/></g><g id="Bottom-Mid" transform="translate(100.000000, 160.000000)"><polygon id="Polygon_2_" fill="#B3B3B3" points="147,287 0,0 294,0"/></g><g id="Top-Mid" transform="translate(100.000000, 0.000000)"><polygon id="Polygon_3_" fill="#EDEDED" points="147,0 0,160 294,160"/></g><g id="Top-Side-Left" transform="translate(0.000000, 15.000000)"><polygon id="Polygon_4_" fill="#B3B3B3" points="107,0 52,73 0,145 101,145"/></g><g id="Top-Side-Right" transform="translate(440.500000, 87.500000) scale(-1, 1) translate(-440.500000, -87.500000) translate(387.000000, 15.000000)"><polygon id="Polygon_5_" fill="#B3B3B3" points="107,0 52,73 0,145 101,145"/></g><g id="Top-Left" transform="translate(100.000000, 0.000000)"><polygon id="Polygon_6_" fill="#C9C9C9" points="7,15 0,160 147,0"/></g><g id="Top-Right" transform="translate(247.000000, 0.000000)"><polygon id="Polygon_7_" fill="#C9C9C9" points="140,15 147,160 0,0"/></g></g></g></g></svg>'
 };
 
+(function (global) {
 
+	// if user resizes browser refresh browsers so mobile / desktop button are reloaded
+	console.log(window.innerWidth);
 
+	window.addEventListener('resize', function (e) {
+		if (window.innerWidth > 767) {
+			// prevent reloading on mobile devices
+			console.log('resize');
+			clearTimeout(resizeTimeout);
+			var resizeTimeout = setTimeout(function () {
+				location.reload();
+			}, 1500);
+		}
+	});
 
-(function(global, svgs){
-
-		function arrayFromObject(object, key) {
-			const array = [];
-			if(key) {
-				for (var key in object) { 
-					array.push({[key] : object[key]} )
-				}		
-			} else {
-				for (var key in object) { 
-					array.push(object[key])
-				}
+	function arrayFromObject(object, key) {
+		var array = [];
+		if (key) {
+			for (var key in object) {
+				array.push(_defineProperty({}, key, object[key]));
 			}
-			
-			return array;
+		} else {
+			for (var key in object) {
+				array.push(object[key]);
+			}
+		}
+		return array;
+	}
+
+	var c = void 0,
+	    ctx = void 0,
+	    w = void 0,
+	    h = void 0,
+	    count = void 0,
+	    lines = void 0,
+	    tick = void 0;
+
+	function rand(min, max) {
+		return Math.random() * (max - min) + min;
+	};
+
+	var Line = function () {
+		function Line(opt) {
+			_classCallCheck(this, Line);
+
+			Object.assign(this, opt);
+			this.rx = this.x;
 		}
 
-
-		let c,
-			ctx,
-			w,
-			h,
-			count,
-			lines,
-			tick;
-
-		function rand( min, max ) {
-			return Math.random() * ( max - min ) + min;
-		};
-
-		class Line {
-			constructor( opt ) {
-				Object.assign( this, opt )
-				this.rx = this.x;
+		_createClass(Line, [{
+			key: 'step',
+			value: function step() {
+				this.rx = this.x + Math.sin((tick + this.offset) / this.div) * this.range;
 			}
-			step() {
-				this.rx = this.x + Math.sin( ( tick + this.offset ) / this.div ) * this.range;
-			}
-			draw() {
+		}, {
+			key: 'draw',
+			value: function draw() {
 				ctx.fillStyle = '#629aa9';
-				ctx.fillRect( ( this.rx - this.w / 2 ) + rand( -2, 2 ), ~~( this.y - this.h / 2 ), this.w + rand( -2, 2 ), ~~this.h );
+				ctx.fillRect(this.rx - this.w / 2 + rand(-2, 2), ~~(this.y - this.h / 2), this.w + rand(-2, 2), ~~this.h);
 			}
-		}
+		}]);
 
-		function init() {
-			c = document.querySelector( 'canvas' );
-			ctx = c.getContext( '2d' );
-			w = 300;
-			h = 300;
-			count = 250;
-			lines = [];
-			tick = 0;
-			reset();
-			loopAnim();
-		}
+		return Line;
+	}();
 
-		function reset() {
-			c.width = w;
-			c.height = h;
-			lines.length = 0;	
-			for( let i = 0; i < count; i++ ) {
-				lines.push( new Line({
-					x: w / 2,
-					y: 50 + count - i,
-					w: ( count - i ) * 1,
-					h: 1,
-					range: i / 8 + rand( 0, ( count - i ) / 10 ),
-					div: 40,
-					offset: i + rand( 0, 20 ),
-					hue: 120,
-					saturation: 0,
-					lightness: 0,
-					alpha: ( ( count - i * 0.9 ) / count ) * 0.9
-				}));
-			}
-		}
+	function init() {
+		c = document.querySelector('canvas');
+		ctx = c.getContext('2d');
+		w = 300;
+		h = 300;
+		count = 250;
+		lines = [];
+		tick = 0;
+		reset();
+		loopAnim();
+	}
 
-		function step() {
-			let i = count;
-			while( i-- ) { lines[ i ].step(); }
-			tick += rand( 0, 1 ) > 0.2 ? 1 : rand( 5, 10 );
+	function reset() {
+		c.width = w;
+		c.height = h;
+		lines.length = 0;
+		for (var i = 0; i < count; i++) {
+			lines.push(new Line({
+				x: w / 2,
+				y: 50 + count - i,
+				w: (count - i) * 1,
+				h: 1,
+				range: i / 8 + rand(0, (count - i) / 10),
+				div: 40,
+				offset: i + rand(0, 20),
+				hue: 120,
+				saturation: 0,
+				lightness: 0,
+				alpha: (count - i * 0.9) / count * 0.9
+			}));
 		}
+	}
 
-		function draw() {
-			// ctx.fillStyle = 'hsla(' + ( 260 + tick + rand( 0, 90 ) ) + ', ' + rand( 75, 100 ) + '%, ' + rand( 45, 55 ) + '%, 0.1)';
-			ctx.fillStyle = '#def1fd';
-			ctx.fillRect( 0, 0, w, h );
-			let i = count;
-			while( i-- ) { lines[ i ].draw(); }
-			if( rand( 0, 1 ) > 0.5 ) {
-				ctx.save();
-				// if( rand( 0, 1 ) > 0.5 ) {
-				// 	ctx.globalCompositeOperation = 'overlay';
-				// } else {
-				// 	ctx.globalCompositeOperation = 'lighter';
-				// 	ctx.globalAlpha = 0.2;
-				// }
-				ctx.translate( w / 2 + rand( -0.1, 0.1 ), h / 2 + rand( -0.1, 0.1 ) );
-				ctx.scale( rand( 1, 1.1 ), rand( 0.98, 1.02 ) );
-				ctx.rotate(rand( -0.005, 0.005 ) );
-				ctx.translate( -w / 2 + rand( -0.1, 0.1 ), -h / 2 + rand( -0.1, 0.1 ) );
-				// ctx.drawImage( c, 0, 0 );
-				ctx.restore();
-			}
+	function step() {
+		var i = count;
+		while (i--) {
+			lines[i].step();
 		}
+		tick += rand(0, 1) > 0.2 ? 1 : rand(5, 10);
+	}
 
-		function loopAnim() {
-			requestAnimationFrame( loopAnim );
-			step();
-			draw();
+	function draw() {
+		// ctx.fillStyle = 'hsla(' + ( 260 + tick + rand( 0, 90 ) ) + ', ' + rand( 75, 100 ) + '%, ' + rand( 45, 55 ) + '%, 0.1)';
+		ctx.fillStyle = '#def1fd';
+		ctx.fillRect(0, 0, w, h);
+		var i = count;
+		while (i--) {
+			lines[i].draw();
 		}
-		// Homepage animation
-		init(); 		// This code is modified version of http://codepen.io/jackrugile/pen/wzgzOP
+		if (rand(0, 1) > 0.5) {
+			ctx.save();
+			// if( rand( 0, 1 ) > 0.5 ) {
+			// 	ctx.globalCompositeOperation = 'overlay';
+			// } else {
+			// 	ctx.globalCompositeOperation = 'lighter';
+			// 	ctx.globalAlpha = 0.2;
+			// }
+			ctx.translate(w / 2 + rand(-0.1, 0.1), h / 2 + rand(-0.1, 0.1));
+			ctx.scale(rand(1, 1.1), rand(0.98, 1.02));
+			ctx.rotate(rand(-0.005, 0.005));
+			ctx.translate(-w / 2 + rand(-0.1, 0.1), -h / 2 + rand(-0.1, 0.1));
+			// ctx.drawImage( c, 0, 0 );
+			ctx.restore();
+		}
+	}
 
+	function loopAnim() {
+		requestAnimationFrame(loopAnim);
+		step();
+		draw();
+	}
+	// Homepage animation
+	init(); // This code is modified version of http://codepen.io/jackrugile/pen/wzgzOP
 
 
 	function jump(target, options) {
-	    var start = window.pageYOffset;
-	    console.log(target)
-	    var opt = {
-	      duration: options.duration,
-	      offset: options.offset || 0,
-	      callback: options.callback,
-	      easing: options.easing || easeInOutQuad
-	    };
+		var start = window.pageYOffset;
+		var opt = {
+			duration: options.duration,
+			offset: options.offset || 0,
+			callback: options.callback,
+			easing: options.easing || easeInOutQuad
+		};
 
-	    var distance = typeof target === 'string' ? 
-	        opt.offset + document.querySelector(target).getBoundingClientRect().top : 
-	        target
-	    ;
+		var distance = typeof target === 'string' ? opt.offset + document.querySelector(target).getBoundingClientRect().top : target;
 
-	    var duration = typeof opt.duration === 'function'
-	          ? opt.duration(distance)
-	          : opt.duration
-	    ;
+		var duration = typeof opt.duration === 'function' ? opt.duration(distance) : opt.duration;
 
-	    var 
-	        timeStart = null,
-	        timeElapsed
-	    ;
+		var timeStart = null,
+		    timeElapsed;
 
-			requestAnimationFrame(function(time) { timeStart = time; loop(time); });
+		requestAnimationFrame(function (time) {
+			timeStart = time;loop(time);
+		});
 
-	    // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
-	    function easeInOutQuad(t, b, c, d)  {
-	        t /= d / 2
-	        if(t < 1) return c / 2 * t * t + b
-	        t--
-	        return -c / 2 * (t * (t - 2) - 1) + b
-	    }
+		// Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
+		function easeInOutQuad(t, b, c, d) {
+			t /= d / 2;
+			if (t < 1) return c / 2 * t * t + b;
+			t--;
+			return -c / 2 * (t * (t - 2) - 1) + b;
+		}
 
+		function loop(time) {
+			if (timeStart === null) timeStart = time;
 
-	    function loop(time) {
-	        if (timeStart === null)
-	            timeStart = time;
+			timeElapsed = time - timeStart;
 
-	        timeElapsed = time - timeStart;
+			window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
 
-	        window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
+			if (timeElapsed < duration) requestAnimationFrame(loop);else end();
+		}
 
-	        if (timeElapsed < duration)
-	            requestAnimationFrame(loop)
-	        else
-	            end();
-	    }
-
-	    function end() {
-	        window.scrollTo(0, start + distance);
-	        console.log('end')
-	        typeof opt.callback === 'function' && opt.callback();
-	        timeStart = null;
-	    }
-
+		function end() {
+			window.scrollTo(0, start + distance);
+			console.log('end');
+			typeof opt.callback === 'function' && opt.callback();
+			timeStart = null;
+		}
 	}
 
-const pageUrl = location.hash
-        ? stripHash(location.href)
-        : location.href
-    ;
+	var pageUrl = location.hash ? stripHash(location.href) : location.href;
 
-function stripHash(url) {
-    return url.slice(0, url.lastIndexOf('#'));
-}
-
-function isInPageLink(n) {
-	if(n.tagName.toLowerCase() === 'svg' || n.tagName.toLowerCase() === 'path') {
-		return true
-	} else {
-     return n.tagName.toLowerCase() === 'a' 
-        && n.hash.length > 0
-        && stripHash(n.href) === pageUrl;
+	function stripHash(url) {
+		return url.slice(0, url.lastIndexOf('#'));
 	}
-}
 
-function onClick(e) {
-    if (!isInPageLink(e.target)) {
-    	// console.log(e.target)
-      return;  	
-    } else {
-	    e.stopPropagation();
-	    e.preventDefault();
-	    // console.dir(e.target);
-	    if(e.target.tagName.toLowerCase() === 'path') {
-	    	if(e.target.parentNode.parentNode.hash) {
-			    jump(e.target.parentNode.parentNode.hash, {
-			        duration: 500
-			    }); 	    
-			  }	
-	    } else if(e.target.tagName.toLowerCase() === 'svg') {
-	    	if(e.target.parentNode.hash) {
+	function isInPageLink(n) {
+		if (n.tagName.toLowerCase() === 'svg' || n.tagName.toLowerCase() === 'path') {
+			return true;
+		} else {
+			return n.tagName.toLowerCase() === 'a' && n.hash.length > 0 && stripHash(n.href) === pageUrl;
+		}
+	}
+
+	function onClick(e) {
+		console.dir(e.target);
+		if (!isInPageLink(e.target)) {
+			// console.log(e.target)
+			return;
+		} else {
+			e.stopPropagation();
+			e.preventDefault();
+
+			if (e.target.tagName.toLowerCase() === 'path') {
+				if (e.target.parentNode.parentNode.hash) {
+					jump(e.target.parentNode.parentNode.hash, {
+						duration: 500
+					});
+				}
+			} else if (e.target.tagName.toLowerCase() === 'svg') {
+				if (e.target.parentNode.hash) {
 					jump(e.target.parentNode.hash, {
-							        duration: 500
-							    }); 	
-				}   	    	
-	    } else {
-		    jump(e.target.hash, {
-		        duration: 500
-		    });  	    	
-	    }    
-  	
-    }
-}
+						duration: 500
+					});
+				}
+			} else {
+				jump(e.target.hash, {
+					duration: 500
+				});
+			}
+		}
+	}
 
-document.body.addEventListener('click', onClick, false); // Smooth scroll link eventListener
+	document.body.addEventListener('click', onClick, false); // Smooth scroll link eventListener
 
 
-function loadContent(e, selection) {
+	function loadContent(e, selection, mobile) {
 
-	const item = parseInt(e.target.dataset.array)
-	console.log(selection)
-	
-	fetch('../data/siteData.json')
-		.then( (response) =>  {
-			return response.json()
-		}).then( (json) => {
-			console.log(json[selection])
-			
-			var data1 = arrayFromObject(json[selection])[item]
-			var data2 = arrayFromObject(json[selection])[item + 1]
-			
+		var item = parseInt(e.target.dataset.array);
+		console.log(selection);
+
+		fetch('../data/siteData.json').then(function (response) {
+			return response.json();
+		}).then(function (json) {
+			console.log(json[selection]);
+
+			var data1 = arrayFromObject(json[selection])[item];
+			var data2 = !mobile ? arrayFromObject(json[selection])[item + 1] : null;
+
 			console.log(data1.title);
-			
-			update[selection](data1, data2, e.target)
-		})
-	
-}
 
-
-
-var update = (function updater(svgs){
-	const appButtons = document.querySelectorAll('.webapps .title button');
-	const siteButtons = document.querySelectorAll('.websites .title button');	
-	const links = document.querySelectorAll('.container .left-col a');
-	const titles = document.querySelectorAll('.container .right-col h3');
-	const images = document.querySelectorAll('.container .left-col img');
-	const descriptions = document.querySelectorAll('.container .right-col p');
-	const techBadges = document.querySelectorAll('.container .right-col .tech-list')
-	
-	console.log(techBadges)
-	
-	// console.log(buttons)
-	function webApps(data1, data2, btn) {
-		console.log(data1)
-		links[0].href = data1.url;
-		titles[0].textContent = data1.title;
-		images[0].src = data1.img;
-		images[0].alt = data1.title;
-		descriptions[0].textContent = data1.blurb;
-		console.log(svgs.sketch)
-		
-		techBadges[0].innerHTML = "";
-		techBadges[1].innerHTML = "";		
-		
-		data1.badges.forEach( (badge) => {
-			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
-			techBadges[0].appendChild(listItem);
-		})
-
-
-		links[1].href = data2.url;		
-		titles[1].textContent = data2.title;
-		images[1].src = data2.img;
-		images[1].alt = data2.title;
-		descriptions[1].textContent = data2.blurb;
-
-		data2.badges.forEach( (badge) => {		
-			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
-			techBadges[1].appendChild(listItem);
-		})
-				
-		appButtons.forEach( (btn) => btn.classList.remove('active') );
-		btn.classList.add('active');
-		
+			update[selection](data1, data2, e.target);
+		});
 	}
-	
-	function webSites(data1, data2, btn) {
-		console.log(data1)
-		links[2].href = data1.url;
-		titles[2].textContent = data1.title;
-		images[2].src = data1.img;
-		images[2].alt = data1.title;
-		descriptions[2].textContent = data1.blurb;
 
-		techBadges[2].innerHTML = "";
-		
-		data1.badges.forEach( (badge) => {
-			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
-			techBadges[2].appendChild(listItem);
-		})
+	var update = function updater() {
+		var appButtons = document.querySelectorAll('.webapps .title button');
+		var siteButtons = document.querySelectorAll('.websites .title button');
+		var links = document.querySelectorAll('.container .left-col a');
+		var titles = document.querySelectorAll('.container .right-col h3');
+		var images = document.querySelectorAll('.container .left-col img');
+		var descriptions = document.querySelectorAll('.container .right-col p');
+		var techBadges = document.querySelectorAll('.container .right-col .tech-list');
 
-		links[3].href = data2.url;		
-		titles[3].textContent = data2.title;
-		images[3].src = data2.img;
-		images[3].alt = data2.title;
-		descriptions[3].textContent = data2.blurb;
-		
-		techBadges[3].innerHTML = "";		
+		function webApps(data1, data2, btn) {
+			links[0].href = data1.url;
+			titles[0].textContent = data1.title;
+			images[0].src = data1.img;
+			images[0].alt = data1.title;
 
-		
-		data2.badges.forEach( (badge) => {
-			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
-			techBadges[3].appendChild(listItem);
-		})
-						
-		siteButtons.forEach( (btn) => btn.classList.remove('active') );
-		btn.classList.add('active');		
-	}
-	
-	return {
-		Webapps : webApps,
-		Websites : webSites
-	}
-	
-})(svgs)
+			images[0].addEventListener('load', function (e) {// do we need ?
+				// console.log(e)
+			});
 
+			descriptions[0].textContent = data1.blurb;
 
-const title = document.querySelectorAll('.container .right-col h3')
-console.log(title)
+			techBadges[0].innerHTML = "";
+			techBadges[1].innerHTML = "";
 
-const slidingfPanelButton = document.querySelector('.sliding-panel-button');
+			data1.badges.forEach(function (badge) {
+				var listItem = document.createElement('li');
+				listItem.innerHTML = svgLibrary[badge];
+				techBadges[0].appendChild(listItem);
+			});
 
-const slidingPanelClose = document.querySelector('.sliding-panel-close');
-const slidingPanelContent = document.querySelector('.off-canvas-menu');
+			if (data2) {
+				// if data 2 is null we are updating mobile and ignore this
+				links[1].href = data2.url;
+				titles[1].textContent = data2.title;
+				images[1].src = data2.img;
+				images[1].alt = data2.title;
+				descriptions[1].textContent = data2.blurb;
 
-const navMenuItems = Array.from(document.querySelectorAll('.off-canvas-menu ul li a'));
+				data2.badges.forEach(function (badge) {
+					var listItem = document.createElement('li');
+					listItem.innerHTML = svgLibrary[badge];
+					techBadges[1].appendChild(listItem);
+				});
+			}
 
-const emailButton = document.querySelector('.email-btn');
-const phoneButton = document.querySelector('.phone-btn')
+			appButtons.forEach(function (btn) {
+				return btn.classList.remove('active');
+			});
+			btn.classList.add('active');
+		}
 
-slidingfPanelButton.addEventListener('click', (e) => {
-	slidingfPanelButton.classList.toggle('open');
-	slidingPanelContent.classList.toggle('is-visible');
-})
+		function webSites(data1, data2, btn) {
+			links[2].href = data1.url;
+			titles[2].textContent = data1.title;
+			images[2].src = data1.img;
+			images[2].alt = data1.title;
+			descriptions[2].textContent = data1.blurb;
 
-navMenuItems.forEach( (item) => {
-	item.addEventListener('click', (e) => {
+			techBadges[2].innerHTML = "";
+
+			data1.badges.forEach(function (badge) {
+				var listItem = document.createElement('li');
+				listItem.innerHTML = svgLibrary[badge];
+				techBadges[2].appendChild(listItem);
+			});
+
+			if (data2) {
+				// if data 2 is null we are updating mobile and ignore this
+				links[3].href = data2.url;
+				titles[3].textContent = data2.title;
+				images[3].src = data2.img;
+				images[3].alt = data2.title;
+				descriptions[3].textContent = data2.blurb;
+
+				techBadges[3].innerHTML = "";
+
+				data2.badges.forEach(function (badge) {
+					var listItem = document.createElement('li');
+					listItem.innerHTML = svgLibrary[badge];
+					techBadges[3].appendChild(listItem);
+				});
+			}
+
+			siteButtons.forEach(function (btn) {
+				return btn.classList.remove('active');
+			});
+			btn.classList.add('active');
+		}
+
+		return {
+			Webapps: webApps,
+			Websites: webSites
+		};
+	}();
+
+	var title = document.querySelectorAll('.container .right-col h3');
+
+	var slidingfPanelButton = document.querySelector('.sliding-panel-button');
+
+	var slidingPanelClose = document.querySelector('.sliding-panel-close');
+	var slidingPanelContent = document.querySelector('.off-canvas-menu');
+
+	var navMenuItems = Array.from(document.querySelectorAll('.off-canvas-menu ul li a'));
+
+	var emailButton = document.querySelector('.email-btn');
+	var phoneButton = document.querySelector('.phone-btn');
+	var githubButton = document.querySelectorAll('.github-btn');
+	var instagramButton = document.querySelector('.instagram-btn');
+
+	slidingfPanelButton.addEventListener('click', function (e) {
 		slidingfPanelButton.classList.toggle('open');
 		slidingPanelContent.classList.toggle('is-visible');
-	})
-})
+	});
 
-emailButton.addEventListener('click', (e) => {
-	e.preventDefault();
-	window.location.href = "mailto:talk@tbullock.net";
-})
+	navMenuItems.forEach(function (item) {
+		item.addEventListener('click', function (e) {
+			slidingfPanelButton.classList.toggle('open');
+			slidingPanelContent.classList.toggle('is-visible');
+		});
+	});
 
-phoneButton.addEventListener('click', (e) => {
-	e.preventDefault();
-	window.location.href = "tel:0403703950"
-})
-		
-		
-const webAppButtons = document.querySelectorAll('.webapps .title button');
-const webSiteButtons = document.querySelectorAll('.websites .title button');
+	instagramButton.addEventListener('click', function (e) {
+		e.preventDefault();
+		window.location.href = "https://www.instagram.com/motbollox/";
+	});
 
-webAppButtons.forEach( (btn) => {
-	btn.addEventListener('click', (e) => {
-		console.log(e.target)
-		loadContent(e, "Webapps")
-	}, false)
-})
+	emailButton.addEventListener('click', function (e) {
+		e.preventDefault();
+		window.location.href = "mailto:talk@tbullock.net";
+	});
 
-webSiteButtons.forEach( (btn) => {
-	btn.addEventListener('click', (e) => {
-		console.log(e.target)
-		loadContent(e, "Websites")
-	}, false)
-})
+	phoneButton.addEventListener('click', function (e) {
+		e.preventDefault();
+		window.location.href = "tel:0403703950";
+	});
 
-console.log(svgs)
-// page2.addEventListener('click', (e) => {
+	githubButton.forEach(function (btn) {
+		btn.addEventListener('click', function (e) {
+			e.preventDefault();
+			window.location.href = "https://github.com/ThomasBullock";
+		});
+	});
 
-// 	loadContent(e)
-// }, false )		
-	
-}(window, svgLibrary));
+	var mobAppButtons = document.querySelectorAll('.webapps .title .mob-buttons button');
+	var mobSiteButtons = document.querySelectorAll('.websites .title .mob-buttons button');
 
+	var deskAppButtons = document.querySelectorAll('.webapps .title .desktop-buttons button');
+	var deskSiteButtons = document.querySelectorAll('.websites .title .desktop-buttons button');
+
+	deskAppButtons.forEach(function (btn) {
+		var style = window.getComputedStyle(btn);
+		btn.addEventListener('click', function (e) {
+			loadContent(e, "Webapps");
+		}, false);
+	});
+
+	deskSiteButtons.forEach(function (btn) {
+		btn.addEventListener('click', function (e) {
+			loadContent(e, "Websites");
+		}, false);
+	});
+
+	mobAppButtons.forEach(function (btn) {
+		var style = window.getComputedStyle(btn);
+		btn.addEventListener('click', function (e) {
+			loadContent(e, "Webapps", true);
+		}, false);
+	});
+
+	mobSiteButtons.forEach(function (btn) {
+		btn.addEventListener('click', function (e) {
+			loadContent(e, "Websites", true);
+		}, false);
+	});
+})(window);
 
 //# sourceMappingURL=app.js.map

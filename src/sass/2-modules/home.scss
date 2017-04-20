@@ -3,9 +3,7 @@ main {
 
 	section.home {
 		
-		// @include outer-container(100%);
 		text-align: center;
-		// background: linear-gradient(180deg, $soundcloud-orange, darken($soundcloud-orange, 15%))
 		
 		.scene {
 			background: lighten($twitter-blue, 40%);

@@ -1,11 +1,7 @@
 main {
 	
 	section.work {
-		
-		
-		// @include outer-container(100%);
-			// background: $snow;			
-			
+				
 			.wrapper {
 				min-height: 100%;
 				display: flex;
@@ -26,7 +22,6 @@ main {
 		}
 		
 
-
 	/* ================================= 
 	  TABLET
 	==================================== */
@@ -34,10 +29,6 @@ main {
 		@include media($tablet) {				
 			.wrapper {
 				@include outer-container(80%);
-
-				h1{
-					// padding-top: $base-spacing * 2;
-				}
 
 			}
 		} // end of tablet media query
@@ -52,10 +43,6 @@ main {
 		@include media($desktop) {
 			.wrapper {
 				@include outer-container(80%);
-
-				h1{
-					// padding-top: $base-spacing * 4;
-				}
 															
 			}
 		}  // end of desktop media query

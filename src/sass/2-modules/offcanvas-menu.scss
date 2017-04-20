@@ -20,6 +20,11 @@
 
   ul.navigation {
     @include outer-container(50%);
+    
+    @include media($mobile-landscape) {
+      flex-wrap: nowrap; 
+    }
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -30,9 +35,7 @@
 
     li {
       text-align: center;
-      flex: 1 1 100%;
-      
-      
+      flex: 1 1 100%;      
     }
   
     li:nth-child(2), li:nth-child(3) {

@@ -2,7 +2,9 @@ main {
 	
 	section.webapps {
 		
-
+		a.smooth-link {
+			display: none;
+		}			
 		
 
 		height: 100vh;
@@ -27,17 +29,16 @@ main {
 				align-items: flex-start;				
 					
 				h3 {
-					margin-top: $base-spacing;
+					margin-top: $base-spacing / 2;
 				} 
 
 
 					.container {
-						margin-top: $base-spacing * 2;
+						margin-top: $base-spacing / 1.5;
 						display: flex;
 						flex-wrap: wrap;
 						
 						img {
-							// width: 80%;
 							margin: 0 auto;
 						}
 
@@ -51,7 +52,11 @@ main {
 						.right-col {
 								flex: 1 1 100%;
 								margin-left: 0;
-								margin-right: 0;													
+								margin-right: 0;
+								
+								p {
+									margin-bottom: $base-spacing / 2;
+								}													
 						}
 					}
 
@@ -80,6 +85,12 @@ main {
 
 		@include media($tablet) {
 			height: 100vh;
+			
+			
+			a.smooth-link {
+				display: inline-block;
+			}					
+			
 			.wrapper {
 				// padding-top: $base-spacing * 4;		
 				@include outer-container(80%);
@@ -146,6 +157,11 @@ main {
 			img {
 				width: 100%;
 			}
+						
+			a.smooth-link {
+				display: inline-block;
+			}					
+			
 			.wrapper {
 				@include outer-container(80%);
 

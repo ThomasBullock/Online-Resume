@@ -14,7 +14,7 @@
 		},
 		{
 			"title": "Phaser Game",
-			"img": "img/MotsPaint.png",
+			"img": "img/Game.png",
 			"url": "https://thomasbullock.github.io/FCCGameDevChallengeDec/",
 			"blurb": "An online collaboration with a fellow Free Code Camp student from France. This game is powered by the Phaser framework. Graphics created by me in Adobe Illustrator.",
 			"badges": [
@@ -25,7 +25,7 @@
 			"title": "Dynamic Frontend Cheatsheet",
 			"img": "img/Cheatsheet.png",
 			"url": "http://nasty-pie.surge.sh/",
-			"blurb": "I made this frontend cheat sheet as an excuse to play around with Knockout JS and to organise into one place the various notes and cheatsheets I'd accumulated. Cheats are loaded from JSON with each cheat having its own array of 'tags' allowing for dynamic filtering of cheats via user input.",
+			"blurb": "I made this frontend cheat sheet as an excuse to play around with Knockout JS and to organise into one place my numerous notes and cheatsheets. Each cheat has its own array of 'tags' allowing for dynamic filtering of cheats via user input.",
 			"badges": [
 				"jQuery", "js" 
 			]
@@ -65,7 +65,7 @@
 			"title": "WazMoz.com",
 			"img": "img/WazMoz.png",
 			"url": "http://wazmoz.com/",
-			"blurb": "Customized bootsrap website. Fully responsive and W3C compliant. I created the mosaic themed navbar and instagram logo in Adobe Illustrator. Also setup a server side PHP script to process contact form with reCaptcha spam prevention.",
+			"blurb": "Customized bootsrap website. Fully responsive and W3C compliant. Mosaic themed navbar and instagram logo created in Adobe Illustrator. Also setup a server side PHP script to process contact form with reCaptcha spam prevention.",
 			"badges": [
 				"bootstrap","jQuery","ai" 
 			]

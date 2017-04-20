@@ -23,38 +23,44 @@ main {
 
 		}
 
-		ul.desktop-buttons {
+		div.desktop-buttons {
 			display: none;
+			
 		}
 
-		ul.mob-buttons {
+		div.mob-buttons {
 			flex: 1 1 100%;
 		}			
+		
+		div.desktop-buttons, div.mob-buttons {
 
-		button {
-			display: inline-block;
-			width: $base-spacing;
-			height: $base-spacing;
-			margin-bottom: 14px;
-			padding: 0;
-			
+			button {
+				display: inline-block;
+				width: $base-spacing;
+				height: $base-spacing;
+				padding: 0;
+				
 
-			border-radius: 50%;
-			border: none;
-			
-			
-			&:hover {
-				cursor: pointer;
+				border-radius: 50%;
+				border: none;
+				
+				
+				&:hover {
+					cursor: pointer;
+				}
+				
+				&.active {
+					background: $twitter-blue;							
+				}
+				
+	  		h3 {
+	  			display: inline-block;
+	  		}
 			}
 			
-			&.active {
-				background: $twitter-blue;							
-			}
-			
-  		h3 {
-  			display: inline-block;
-  		}
 		}
+		
+
 		
 	}
 	
@@ -62,13 +68,12 @@ main {
 	
 	a.smooth-link {
 		position: relative;
-		// width: 64px;
 		height: 64px;
-		// padding: 10px;
 	}
 
 	
 	.tech-list {
+		margin-top: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -105,12 +110,10 @@ section {
 
 
 	.wrapper {
-		// position: relative;
-		padding: $base-spacing $base-spacing / 2;
+		padding: $base-spacing / 2 $base-spacing / 4;
 	}
 	
 }
-
 
 
 
@@ -124,21 +127,22 @@ section {
 		.wrapper {
 			padding: $base-spacing $base-spacing;	
 
-
 		.title {
 			flex-wrap: nowrap;
 
-			ul.mob-buttons {
+			.mob-buttons button, .desktop-buttons button {
+					margin-bottom: 14px;					
+			}
+
+			div.mob-buttons {
 				display: none;
 			}
 
-			ul.desktop-buttons {
+			div.desktop-buttons {
 				display: inline-block;
 				margin-left: $base-spacing;
 			}
 		}
-
-
 
 		}
 	}
@@ -153,16 +157,21 @@ section {
 
 	section {
 		.wrapper {
-			padding: $base-spacing * 2 $base-spacing * 2;
+			padding: $base-spacing * 1 $base-spacing * 1;
 
 		.title {
 			flex-wrap: nowrap;
 			
-			ul.mob-buttons {
+			div.mob-buttons button, div.desktop-buttons button {
+					margin-bottom: 14px;					
+			}
+			
+			div.mob-buttons {
 				display: none;
+				
 			}			
 
-			ul.desktop-buttons {
+			div.desktop-buttons {
 				display: inline-block;
 				margin-left: $base-spacing;
 			}

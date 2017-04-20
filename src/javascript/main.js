@@ -1,5 +1,19 @@
 
-(function(global, svgs){
+(function(global){
+	
+		// if user resizes browser refresh browsers so mobile / desktop button are reloaded
+		console.log(window.innerWidth);
+
+			window.addEventListener('resize', (e) => {
+				if(window.innerWidth > 767) {  // prevent reloading on mobile devices
+					console.log('resize')
+					clearTimeout(resizeTimeout);
+					var resizeTimeout = setTimeout( () => {
+							location.reload();	
+					}, 1500);
+				}
+			})			
+
 
 		function arrayFromObject(object, key) {
 			const array = [];
@@ -11,8 +25,7 @@
 				for (var key in object) { 
 					array.push(object[key])
 				}
-			}
-			
+			}			
 			return array;
 		}
 
@@ -117,7 +130,6 @@
 
 	function jump(target, options) {
 	    var start = window.pageYOffset;
-	    console.log(target)
 	    var opt = {
 	      duration: options.duration,
 	      offset: options.offset || 0,
@@ -194,13 +206,14 @@ function isInPageLink(n) {
 }
 
 function onClick(e) {
+		console.dir(e.target);
     if (!isInPageLink(e.target)) {
     	// console.log(e.target)
       return;  	
     } else {
 	    e.stopPropagation();
 	    e.preventDefault();
-	    // console.dir(e.target);
+
 	    if(e.target.tagName.toLowerCase() === 'path') {
 	    	if(e.target.parentNode.parentNode.hash) {
 			    jump(e.target.parentNode.parentNode.hash, {
@@ -225,7 +238,7 @@ function onClick(e) {
 document.body.addEventListener('click', onClick, false); // Smooth scroll link eventListener
 
 
-function loadContent(e, selection) {
+function loadContent(e, selection, mobile) {
 
 	const item = parseInt(e.target.dataset.array)
 	console.log(selection)
@@ -237,7 +250,7 @@ function loadContent(e, selection) {
 			console.log(json[selection])
 			
 			var data1 = arrayFromObject(json[selection])[item]
-			var data2 = arrayFromObject(json[selection])[item + 1]
+			var data2 = (!mobile) ? arrayFromObject(json[selection])[item + 1] : null;
 			
 			console.log(data1.title);
 			
@@ -248,7 +261,7 @@ function loadContent(e, selection) {
 
 
 
-var update = (function updater(svgs){
+var update = (function updater(){
 	const appButtons = document.querySelectorAll('.webapps .title button');
 	const siteButtons = document.querySelectorAll('.websites .title button');	
 	const links = document.querySelectorAll('.container .left-col a');
@@ -256,40 +269,43 @@ var update = (function updater(svgs){
 	const images = document.querySelectorAll('.container .left-col img');
 	const descriptions = document.querySelectorAll('.container .right-col p');
 	const techBadges = document.querySelectorAll('.container .right-col .tech-list')
-	
-	console.log(techBadges)
-	
-	// console.log(buttons)
+
 	function webApps(data1, data2, btn) {
-		console.log(data1)
 		links[0].href = data1.url;
 		titles[0].textContent = data1.title;
 		images[0].src = data1.img;
 		images[0].alt = data1.title;
+		
+		images[0].addEventListener('load', (e) => { // do we need ?
+			// console.log(e)
+		})
+		
 		descriptions[0].textContent = data1.blurb;
-		console.log(svgs.sketch)
 		
 		techBadges[0].innerHTML = "";
 		techBadges[1].innerHTML = "";		
 		
 		data1.badges.forEach( (badge) => {
 			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
+			listItem.innerHTML = svgLibrary[badge];
 			techBadges[0].appendChild(listItem);
 		})
 
+		if(data2) { // if data 2 is null we are updating mobile and ignore this
+			links[1].href = data2.url;		
+			titles[1].textContent = data2.title;
+			images[1].src = data2.img;
+			images[1].alt = data2.title;
+			descriptions[1].textContent = data2.blurb;
 
-		links[1].href = data2.url;		
-		titles[1].textContent = data2.title;
-		images[1].src = data2.img;
-		images[1].alt = data2.title;
-		descriptions[1].textContent = data2.blurb;
+			data2.badges.forEach( (badge) => {		
+				let listItem = document.createElement('li')
+				listItem.innerHTML = svgLibrary[badge];
+				techBadges[1].appendChild(listItem);
+			})			
+		}
 
-		data2.badges.forEach( (badge) => {		
-			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
-			techBadges[1].appendChild(listItem);
-		})
+
 				
 		appButtons.forEach( (btn) => btn.classList.remove('active') );
 		btn.classList.add('active');
@@ -297,7 +313,6 @@ var update = (function updater(svgs){
 	}
 	
 	function webSites(data1, data2, btn) {
-		console.log(data1)
 		links[2].href = data1.url;
 		titles[2].textContent = data1.title;
 		images[2].src = data1.img;
@@ -308,24 +323,25 @@ var update = (function updater(svgs){
 		
 		data1.badges.forEach( (badge) => {
 			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
+			listItem.innerHTML = svgLibrary[badge];
 			techBadges[2].appendChild(listItem);
 		})
 
-		links[3].href = data2.url;		
-		titles[3].textContent = data2.title;
-		images[3].src = data2.img;
-		images[3].alt = data2.title;
-		descriptions[3].textContent = data2.blurb;
+		if(data2) { // if data 2 is null we are updating mobile and ignore this
+			links[3].href = data2.url;		
+			titles[3].textContent = data2.title;
+			images[3].src = data2.img;
+			images[3].alt = data2.title;
+			descriptions[3].textContent = data2.blurb;
+			
+			techBadges[3].innerHTML = "";		
 		
-		techBadges[3].innerHTML = "";		
-
-		
-		data2.badges.forEach( (badge) => {
-			let listItem = document.createElement('li')
-			listItem.innerHTML = svgs[badge];
-			techBadges[3].appendChild(listItem);
-		})
+			data2.badges.forEach( (badge) => {
+				let listItem = document.createElement('li')
+				listItem.innerHTML = svgLibrary[badge];
+				techBadges[3].appendChild(listItem);
+			})
+		}
 						
 		siteButtons.forEach( (btn) => btn.classList.remove('active') );
 		btn.classList.add('active');		
@@ -336,11 +352,10 @@ var update = (function updater(svgs){
 		Websites : webSites
 	}
 	
-})(svgs)
+})()
 
 
 const title = document.querySelectorAll('.container .right-col h3')
-console.log(title)
 
 const slidingfPanelButton = document.querySelector('.sliding-panel-button');
 
@@ -351,6 +366,9 @@ const navMenuItems = Array.from(document.querySelectorAll('.off-canvas-menu ul l
 
 const emailButton = document.querySelector('.email-btn');
 const phoneButton = document.querySelector('.phone-btn')
+const githubButton = document.querySelectorAll('.github-btn');
+const instagramButton = document.querySelector('.instagram-btn');
+
 
 slidingfPanelButton.addEventListener('click', (e) => {
 	slidingfPanelButton.classList.toggle('open');
@@ -364,6 +382,12 @@ navMenuItems.forEach( (item) => {
 	})
 })
 
+
+instagramButton.addEventListener('click', (e) => {
+	e.preventDefault();
+	window.location.href= "https://www.instagram.com/motbollox/";	
+})
+
 emailButton.addEventListener('click', (e) => {
 	e.preventDefault();
 	window.location.href = "mailto:talk@tbullock.net";
@@ -373,30 +397,47 @@ phoneButton.addEventListener('click', (e) => {
 	e.preventDefault();
 	window.location.href = "tel:0403703950"
 })
-		
-		
-const webAppButtons = document.querySelectorAll('.webapps .title button');
-const webSiteButtons = document.querySelectorAll('.websites .title button');
 
-webAppButtons.forEach( (btn) => {
+githubButton.forEach( (btn) => {
 	btn.addEventListener('click', (e) => {
-		console.log(e.target)
+		e.preventDefault();
+		window.location.href= "https://github.com/ThomasBullock";
+	})
+})
+
+const mobAppButtons = document.querySelectorAll('.webapps .title .mob-buttons button');
+const mobSiteButtons = document.querySelectorAll('.websites .title .mob-buttons button');
+
+const deskAppButtons = document.querySelectorAll('.webapps .title .desktop-buttons button');
+const deskSiteButtons = document.querySelectorAll('.websites .title .desktop-buttons button');
+
+deskAppButtons.forEach( (btn) => {
+	let style = window.getComputedStyle(btn)	
+	btn.addEventListener('click', (e) => {
 		loadContent(e, "Webapps")
 	}, false)
 })
 
-webSiteButtons.forEach( (btn) => {
+deskSiteButtons.forEach( (btn) => {
 	btn.addEventListener('click', (e) => {
-		console.log(e.target)
 		loadContent(e, "Websites")
 	}, false)
 })
 
-console.log(svgs)
-// page2.addEventListener('click', (e) => {
+mobAppButtons.forEach( (btn) => {
+	let style = window.getComputedStyle(btn)	
+	btn.addEventListener('click', (e) => {
+		loadContent(e, "Webapps", true)
+	}, false)
+})
 
-// 	loadContent(e)
-// }, false )		
+mobSiteButtons.forEach( (btn) => {
+	btn.addEventListener('click', (e) => {
+		loadContent(e, "Websites", true)
+	}, false)
+})
+
+
 	
-}(window, svgLibrary));
+}(window));
 

@@ -2,10 +2,12 @@ main {
 	
 
 	section.contact {
-
+		margin-top: $base-spacing * 8;
 		
+    @include media($mobile-landscape) {
+			margin-top: $base-spacing * 16;	
+		}				
 		text-align: center;
-
 		
 		.wrapper {
 			min-height: 100%;
@@ -27,12 +29,8 @@ main {
 				li:nth-child(2), li:nth-child(3) {
 					margin-top: $base-spacing;
 					margin-left: 0; 
-				}
-					
-			}
-			
-
-			
+				}					
+			}			
 		}
 		
 
@@ -43,7 +41,9 @@ main {
 	==================================== */
 
 		@include media($tablet) {
-			margin-top: $base-spacing * 4;				
+			margin-top: $base-spacing * 4;
+			
+						
 			.wrapper {
 				@include outer-container(80%);
 
@@ -68,6 +68,7 @@ main {
 	==================================== */
 
 		@include media($desktop) {
+			margin-top: $base-spacing;
 			.wrapper {
 				@include outer-container(80%);
 
