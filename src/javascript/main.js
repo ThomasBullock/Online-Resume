@@ -1,11 +1,17 @@
 
-(function(global){
+;(function(global){
+		const backgroundFallback  = document.querySelector('img.fallback');
 	
+		const md = new MobileDetect(window.navigator.userAgent);
+		
+		if( md.mobile() ) {
+			backgroundFallback.classList.add('show');
+		}
+		
 		// if user resizes browser refresh browsers so mobile / desktop button are reloaded
-		console.log(window.innerWidth);
 
 			window.addEventListener('resize', (e) => {
-				if(window.innerWidth > 767) {  // prevent reloading on mobile devices
+				if(window.innerWidth > 767 && !md.mobile() ) {  // prevent reloading on mobile devices
 					console.log('resize')
 					clearTimeout(resizeTimeout);
 					var resizeTimeout = setTimeout( () => {
@@ -14,6 +20,7 @@
 				}
 			})			
 
+		// utility functions	
 
 		function arrayFromObject(object, key) {
 			const array = [];
@@ -30,104 +37,7 @@
 		}
 
 
-		let c,
-			ctx,
-			w,
-			h,
-			count,
-			lines,
-			tick;
-
-		function rand( min, max ) {
-			return Math.random() * ( max - min ) + min;
-		};
-
-		class Line {
-			constructor( opt ) {
-				Object.assign( this, opt )
-				this.rx = this.x;
-			}
-			step() {
-				this.rx = this.x + Math.sin( ( tick + this.offset ) / this.div ) * this.range;
-			}
-			draw() {
-				ctx.fillStyle = '#629aa9';
-				ctx.fillRect( ( this.rx - this.w / 2 ) + rand( -2, 2 ), ~~( this.y - this.h / 2 ), this.w + rand( -2, 2 ), ~~this.h );
-			}
-		}
-
-		function init() {
-			c = document.querySelector( 'canvas' );
-			ctx = c.getContext( '2d' );
-			w = 300;
-			h = 300;
-			count = 250;
-			lines = [];
-			tick = 0;
-			reset();
-			loopAnim();
-		}
-
-		function reset() {
-			c.width = w;
-			c.height = h;
-			lines.length = 0;	
-			for( let i = 0; i < count; i++ ) {
-				lines.push( new Line({
-					x: w / 2,
-					y: 50 + count - i,
-					w: ( count - i ) * 1,
-					h: 1,
-					range: i / 8 + rand( 0, ( count - i ) / 10 ),
-					div: 40,
-					offset: i + rand( 0, 20 ),
-					hue: 120,
-					saturation: 0,
-					lightness: 0,
-					alpha: ( ( count - i * 0.9 ) / count ) * 0.9
-				}));
-			}
-		}
-
-		function step() {
-			let i = count;
-			while( i-- ) { lines[ i ].step(); }
-			tick += rand( 0, 1 ) > 0.2 ? 1 : rand( 5, 10 );
-		}
-
-		function draw() {
-			// ctx.fillStyle = 'hsla(' + ( 260 + tick + rand( 0, 90 ) ) + ', ' + rand( 75, 100 ) + '%, ' + rand( 45, 55 ) + '%, 0.1)';
-			ctx.fillStyle = '#def1fd';
-			ctx.fillRect( 0, 0, w, h );
-			let i = count;
-			while( i-- ) { lines[ i ].draw(); }
-			if( rand( 0, 1 ) > 0.5 ) {
-				ctx.save();
-				// if( rand( 0, 1 ) > 0.5 ) {
-				// 	ctx.globalCompositeOperation = 'overlay';
-				// } else {
-				// 	ctx.globalCompositeOperation = 'lighter';
-				// 	ctx.globalAlpha = 0.2;
-				// }
-				ctx.translate( w / 2 + rand( -0.1, 0.1 ), h / 2 + rand( -0.1, 0.1 ) );
-				ctx.scale( rand( 1, 1.1 ), rand( 0.98, 1.02 ) );
-				ctx.rotate(rand( -0.005, 0.005 ) );
-				ctx.translate( -w / 2 + rand( -0.1, 0.1 ), -h / 2 + rand( -0.1, 0.1 ) );
-				// ctx.drawImage( c, 0, 0 );
-				ctx.restore();
-			}
-		}
-
-		function loopAnim() {
-			requestAnimationFrame( loopAnim );
-			step();
-			draw();
-		}
-		// Homepage animation
-		init(); 		// This code is modified version of http://codepen.io/jackrugile/pen/wzgzOP
-
-
-
+		// smooth scroll 
 	function jump(target, options) {
 	    var start = window.pageYOffset;
 	    var opt = {
@@ -238,10 +148,11 @@ function onClick(e) {
 document.body.addEventListener('click', onClick, false); // Smooth scroll link eventListener
 
 
+
+
 function loadContent(e, selection, mobile) {
 
 	const item = parseInt(e.target.dataset.array)
-	console.log(selection)
 	
 	fetch('../data/siteData.json')
 		.then( (response) =>  {
@@ -255,8 +166,7 @@ function loadContent(e, selection, mobile) {
 			console.log(data1.title);
 			
 			update[selection](data1, data2, e.target)
-		})
-	
+		})	
 }
 
 
@@ -277,7 +187,6 @@ var update = (function updater(){
 		images[0].alt = data1.title;
 		
 		images[0].addEventListener('load', (e) => { // do we need ?
-			// console.log(e)
 		})
 		
 		descriptions[0].textContent = data1.blurb;
@@ -303,13 +212,9 @@ var update = (function updater(){
 				listItem.innerHTML = svgLibrary[badge];
 				techBadges[1].appendChild(listItem);
 			})			
-		}
-
-
-				
+		}			
 		appButtons.forEach( (btn) => btn.classList.remove('active') );
-		btn.classList.add('active');
-		
+		btn.classList.add('active');		
 	}
 	
 	function webSites(data1, data2, btn) {
@@ -357,7 +262,7 @@ var update = (function updater(){
 
 const title = document.querySelectorAll('.container .right-col h3')
 
-const slidingfPanelButton = document.querySelector('.sliding-panel-button');
+const slidingPanelButton = document.querySelector('.sliding-panel-button');
 
 const slidingPanelClose = document.querySelector('.sliding-panel-close');
 const slidingPanelContent = document.querySelector('.off-canvas-menu');
@@ -366,22 +271,26 @@ const navMenuItems = Array.from(document.querySelectorAll('.off-canvas-menu ul l
 
 const emailButton = document.querySelector('.email-btn');
 const phoneButton = document.querySelector('.phone-btn')
-const githubButton = document.querySelectorAll('.github-btn');
+const githubButton = Array.from(document.querySelectorAll('.github-btn'));
 const instagramButton = document.querySelector('.instagram-btn');
 
 
-slidingfPanelButton.addEventListener('click', (e) => {
-	slidingfPanelButton.classList.toggle('open');
+slidingPanelButton.addEventListener('click', (e) => {
+	slidingPanelButton.classList.toggle('open');
 	slidingPanelContent.classList.toggle('is-visible');
 })
 
+const spans = Array.from(document.querySelectorAll('.sliding-panel-button span'));
+
+console.log(navMenuItems);
+
 navMenuItems.forEach( (item) => {
 	item.addEventListener('click', (e) => {
-		slidingfPanelButton.classList.toggle('open');
+		console.log('open!')
+		slidingPanelButton.classList.toggle('open');
 		slidingPanelContent.classList.toggle('is-visible');
 	})
 })
-
 
 instagramButton.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -405,14 +314,10 @@ githubButton.forEach( (btn) => {
 	})
 })
 
-const mobAppButtons = document.querySelectorAll('.webapps .title .mob-buttons button');
-const mobSiteButtons = document.querySelectorAll('.websites .title .mob-buttons button');
-
-const deskAppButtons = document.querySelectorAll('.webapps .title .desktop-buttons button');
-const deskSiteButtons = document.querySelectorAll('.websites .title .desktop-buttons button');
+const deskAppButtons = Array.from(document.querySelectorAll('.webapps .title .desktop-buttons button'));
+const deskSiteButtons = Array.from(document.querySelectorAll('.websites .title .desktop-buttons button'));
 
 deskAppButtons.forEach( (btn) => {
-	let style = window.getComputedStyle(btn)	
 	btn.addEventListener('click', (e) => {
 		loadContent(e, "Webapps")
 	}, false)
@@ -424,19 +329,31 @@ deskSiteButtons.forEach( (btn) => {
 	}, false)
 })
 
+
+
+/// Mobile ////
+
+const mobAppButtons = Array.from(document.querySelectorAll('.webapps .title .mob-buttons button'));
+const mobSiteButtons = Array.from(document.querySelectorAll('.websites .title .mob-buttons button'));
+
 mobAppButtons.forEach( (btn) => {
-	let style = window.getComputedStyle(btn)	
 	btn.addEventListener('click', (e) => {
 		loadContent(e, "Webapps", true)
 	}, false)
+	
+	btn.addEventListener('touchstart', (e) => {
+		loadContent(e, "Webapps", true)
+	}, false)	
 })
 
 mobSiteButtons.forEach( (btn) => {
 	btn.addEventListener('click', (e) => {
 		loadContent(e, "Websites", true)
 	}, false)
+	btn.addEventListener('touchstart', (e) => {
+		loadContent(e, "Websites", true)
+	}, false)		
 })
-
 
 	
 }(window));
