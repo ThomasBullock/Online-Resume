@@ -9,11 +9,11 @@ Technologies used
 
 Download and run NPM install.
 
-###npm run server###
+### npm run server ###
 local server on port 8888
-###gulp watchFiles###
+### gulp watchFiles ###
 compiles Sass with autoprefixer and concatenates js scripts
-###gulp build###
+### gulp build ###
 compiles Sass with autoprefixer and minifies css - concatenates transpiles from es6 and minifies js and outputs project 
 to dist folder
 
