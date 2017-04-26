@@ -5,21 +5,21 @@ main {
 		a.smooth-link {
 			display: none;
 		}			
-		
-
 		height: 100vh;
-		// height: 1000px
+		
+    @include media($mobile-landscape) {
+			h1 {
+				padding-top: $base-spacing * 4;					
+			}
+		}
+
 		img {
-			@include img-responsive();
-			// width: 90%;
-			// margin: 0 auto;			
+			@include img-responsive();	
 			filter: drop-shadow(0 4px 2px rgba(34, 34, 34, .5));
 		}
 		
 		@include outer-container(100%);
-			// background: $snow;
-			text-align: center;
-			
+			text-align: center;	
 			
 			.wrapper {
 				
@@ -31,7 +31,6 @@ main {
 				h3 {
 					margin-top: $base-spacing / 2;
 				} 
-
 
 					.container {
 						margin-top: $base-spacing / 1.5;
@@ -74,7 +73,7 @@ main {
 			width: 0;
 			height: 0;
 			border-bottom: 100vh solid transparent;
-			border-right: 100vw solid lighten($twitter-blue, 40%);
+			border-right: 100vw solid $whisper;		
 		}
 		
 
@@ -140,7 +139,7 @@ main {
 			
 			.triangle-bottomleft {
 				border-bottom: 100vh solid transparent;	
-				border-right: 100vw solid lighten($twitter-blue, 40%);						
+				border-right: 100vw solid $whisper;						
 			}
 			
 			

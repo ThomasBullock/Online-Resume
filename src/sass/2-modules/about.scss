@@ -8,7 +8,6 @@ main {
 			h1 {
 				padding-top: $base-spacing * 4;					
 			}
-
 		}
 			
 			.wrapper {
@@ -18,17 +17,6 @@ main {
 				align-items: center;
 
 			} 
-	
-			.triangle-down {
-				z-index: -1;
-				position: absolute;				
-				width: 0;
-				height: 0;
-				border-left: 50vw solid transparent;
-				border-right: 50vw solid transparent;
-				border-top: 110vh solid lighten($twitter-blue, 40%);
-			}
-
 
 	/* ================================= 
 	  TABLET
@@ -40,11 +28,7 @@ main {
 				@include outer-container(80%);
 
 
-			}
-
-			.triangle-down {
-				border-top: 120vh solid lighten($twitter-blue, 40%);
-			}						
+			}			
 			
 		} // end of tablet media query
 
@@ -61,11 +45,7 @@ main {
 			.wrapper {
 				@include outer-container(80%);
 															
-			}
-			
-			.triangle-down {
-				border-top: 120vh solid lighten($twitter-blue, 40%);
-			}			
+			}		
 			
 		}  // end of desktop media query
 

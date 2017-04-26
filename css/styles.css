@@ -768,7 +768,7 @@ select {
     position: absolute;
     height: 5px;
     width: 100%;
-    background: #d3531a;
+    background: #00aff0;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -815,41 +815,48 @@ main section.home {
 	  DESKTOP
 	==================================== */ }
   main section.home .scene {
-    background: #def1fd;
-    border: solid 12px #1da1f2;
-    border-radius: 50%;
-    bottom: 0;
+    background: rgba(224, 242, 249, 0.8);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: -1;
     height: 300px;
-    left: 0;
-    margin: auto;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
     width: 300px;
-    z-index: -1; }
-    main section.home .scene:after {
-      bottom: 0;
-      content: '';
-      left: 0;
-      opacity: 0.15;
-      position: absolute;
-      right: 0;
-      top: 0; }
-  main section.home canvas {
-    background: #def1fd;
-    display: block; }
+    border: solid 8px #1da1f2;
+    padding: 1.5em;
+    border-radius: 50%; }
+    @media screen and (min-width: 768px) and (max-width: 999px) {
+      main section.home .scene {
+        height: 360px;
+        width: 360px; } }
+    @media screen and (min-width: 1000px) {
+      main section.home .scene {
+        height: 360px;
+        width: 360px; } }
   main section.home .wrapper {
     min-height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    main section.home .wrapper a {
+      margin-top: 3em; }
   @media screen and (min-width: 768px) and (max-width: 999px) {
     main section.home .wrapper {
       max-width: 80%;
@@ -893,7 +900,7 @@ main section.work {
     width: 0;
     height: 0;
     border-top: 100vh solid transparent;
-    border-right: 100vw solid #def1fd; }
+    border-right: 100vw solid rgba(224, 242, 249, 0.8); }
   @media screen and (min-width: 768px) and (max-width: 999px) {
     main section.work .wrapper {
       max-width: 80%;
@@ -930,6 +937,9 @@ main section.webapps {
 	==================================== */ }
   main section.webapps a.smooth-link {
     display: none; }
+  @media screen and (orientation: landscape) and (min-width: 320px) and (max-width: 767px) {
+    main section.webapps h1 {
+      padding-top: 6em; } }
   main section.webapps img {
     max-width: 100%;
     height: auto;
@@ -984,7 +994,7 @@ main section.webapps {
     width: 0;
     height: 0;
     border-bottom: 100vh solid transparent;
-    border-right: 100vw solid #def1fd; }
+    border-right: 100vw solid rgba(224, 242, 249, 0.8); }
   @media screen and (min-width: 768px) and (max-width: 999px) {
     main section.webapps {
       height: 100vh; }
@@ -1034,7 +1044,7 @@ main section.webapps {
             margin-left: 0; }
       main section.webapps .triangle-bottomleft {
         border-bottom: 100vh solid transparent;
-        border-right: 100vw solid #def1fd; } }
+        border-right: 100vw solid rgba(224, 242, 249, 0.8); } }
   @media screen and (min-width: 1000px) {
     main section.webapps img {
       width: 100%; }
@@ -1158,14 +1168,23 @@ main section.websites {
     width: 0;
     height: 0;
     border-top: 100vh solid transparent;
-    border-right: 100vw solid #def1fd; }
+    border-right: 100vw solid rgba(224, 242, 249, 0.8); }
   main section.websites .square {
     z-index: -1;
     position: absolute;
     top: 100vh;
-    background: #def1fd;
+    background: rgba(224, 242, 249, 0.8);
     height: 100vh;
     width: 100%; }
+  main section.websites .triangle-down {
+    z-index: -1;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 200vh;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 120px solid rgba(224, 242, 249, 0.8); }
   @media screen and (min-width: 768px) and (max-width: 999px) {
     main section.websites {
       height: 100vh;
@@ -1296,14 +1315,6 @@ main section.about {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  main section.about .triangle-down {
-    z-index: -1;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 50vw solid transparent;
-    border-right: 50vw solid transparent;
-    border-top: 110vh solid #def1fd; }
   @media screen and (min-width: 768px) and (max-width: 999px) {
     main section.about {
       padding-top: 0; }
@@ -1314,9 +1325,7 @@ main section.about {
         main section.about .wrapper::after {
           clear: both;
           content: "";
-          display: block; }
-      main section.about .triangle-down {
-        border-top: 120vh solid #def1fd; } }
+          display: block; } }
   @media screen and (min-width: 1000px) {
     main section.about {
       padding-top: 0;
@@ -1328,9 +1337,7 @@ main section.about {
         main section.about .wrapper::after {
           clear: both;
           content: "";
-          display: block; }
-      main section.about .triangle-down {
-        border-top: 120vh solid #def1fd; } }
+          display: block; } }
 
 main section.contact {
   margin-top: 12em;
@@ -1343,7 +1350,7 @@ main section.contact {
 	==================================== */ }
   @media screen and (orientation: landscape) and (min-width: 320px) and (max-width: 767px) {
     main section.contact {
-      margin-top: 24em; } }
+      margin-top: 27em; } }
   main section.contact .wrapper {
     min-height: 100%;
     display: -webkit-box;
@@ -1435,9 +1442,34 @@ main section.contact {
             margin-top: 0;
             margin-left: 1.5em; } }
 
+body {
+  background: #FFFFFF; }
+
 /* ================================= 
   MOBILE
 ==================================== */
+header video {
+  opacity: .5;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100; }
+
+header img.fallback {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  z-index: -50;
+  -webkit-transition: all .2s;
+  transition: all .2s; }
+  header img.fallback.show {
+    opacity: .5; }
+
 main {
   max-width: 100%;
   margin-left: auto;

@@ -18,6 +18,8 @@ gulp.task('clean', function(cb) {
 
 gulp.task("concatScripts", function(){
 		return gulp.src([
+			'node_modules/mobile-detect/mobile-detect.min.js',
+			'node_modules/whatwg-fetch/fetch.js',
 			'src/javascript/svgLibrary.js',
 			'src/javascript/main.js'])
 		.pipe(maps.init())
@@ -64,7 +66,7 @@ gulp.task('watchFiles', function() {
 
 gulp.task('build', ["minifyScripts", "minifyCss"], function(){
 	console.log("Remember to change index.html links to minified versions");
-	return gulp.src(["js/app.min.js", "index.html", "img/**", "data/**", "fonts/**"] , { base: "./"})
+	return gulp.src(["js/app.min.js", "index.html", "img/**", "data/**", "fonts/**", "video/**"] , { base: "./"})
 			.pipe(gulp.dest('dist'));
 });
 
