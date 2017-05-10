@@ -1,7 +1,20 @@
 {
 	"Webapps" : 
 	[
+	
 		{
+			"title": "Napeleon Era Wiki",
+			"img": "img/Napoleon-sm.jpg",
+			"url": "https://napoleon-era-wiki.herokuapp.com/",
+			"blurb": "This Express js / Mongo DB powered web app serves as a simple respository of Napoleon Era information. HTML is served up via Pug templating.",
+			"badges": [
+				"node",
+				"heroku",
+				"js"
+			]
+		},
+	
+			{
 			"title": "MyFootyTeam.net",
 			"img": "img/MyFootyTeam-sm.png",
 			"url": "http://myfootyteam.net/",
@@ -12,6 +25,18 @@
 				"js"
 			]
 		},
+	
+		{
+			"title": "Angry Phil Drum Machine",
+			"img": "img/Angry-Phil-sm.jpg",
+			"url": "http://erratic-wall.surge.sh/",
+			"blurb": "Release your inner Phil Collins with this online drum machine. Background video loop created in Adobe After FX. Web app coded with vanilla JS.",
+			"badges": [
+				"js"
+			]
+		},
+	
+
 		{
 			"title": "Phaser Game",
 			"img": "img/Game-sm.png",

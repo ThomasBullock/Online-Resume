@@ -172,8 +172,8 @@ function loadContent(e, selection, mobile) {
 
 
 var update = (function updater(){
-	const appButtons = document.querySelectorAll('.webapps .title button');
-	const siteButtons = document.querySelectorAll('.websites .title button');	
+	const appButtons = Array.from(document.querySelectorAll('.webapps .title button'));
+	const siteButtons = Array.from(document.querySelectorAll('.websites .title button'));	
 	const links = document.querySelectorAll('.container .left-col a');
 	const titles = document.querySelectorAll('.container .right-col h3');
 	const images = document.querySelectorAll('.container .left-col img');
